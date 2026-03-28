@@ -8,9 +8,6 @@ const toSlug = (title) =>
 		.replace(/[^a-z0-9-]/g, "");
 
 const firstSlug = toSlug(clients[0].title);
----
 
-<meta
-	http-equiv="refresh"
-	content={`0; url=${import.meta.env.BASE_URL}client/${firstSlug}`}
-/>
+return Astro.redirect(`/client/${firstSlug}`);
+---
