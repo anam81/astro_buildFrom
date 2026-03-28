@@ -10,11 +10,6 @@ const toSlug = (title) =>
 const firstSlug = toSlug(clients[0].title);
 ---
 
-<html>
-	<head>
-		<script is:inline>
-			window.location.replace(`/client/${firstSlug}`);
-		</script>
-	</head>
-	<body></body>
-</html>
+<script>
+	window.location.replace(`/client/${firstSlug}`);
+</script>

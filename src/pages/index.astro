@@ -13,7 +13,7 @@ const firstSlug = toSlug(videos[0].title);
 <html>
 	<head>
 		<script is:inline>
-			window.location.replace(`/works/${firstSlug}`);
+			window.location.replace(`/works/${JSON.stringify(firstSlug)}`);
 		</script>
 	</head>
 	<body></body>
