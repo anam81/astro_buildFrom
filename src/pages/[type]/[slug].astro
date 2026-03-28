@@ -1,0 +1,278 @@
+---
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { videos } from "../../data/videos.js";
+import { clients } from "../../data/videos_client.js";
+
+const toSlug = (title) =>
+  title
+    .toLowerCase()
+    .replace(/\s+/g, "-")
+    .replace(/[^a-z0-9-]/g, "");
+const allVideos = [...videos, ...clients];
+
+export function getStaticPaths() {
+  const toSlug = (title) =>
+    title
+      .toLowerCase()
+      .replace(/\s+/g, "-")
+      .replace(/[^a-z0-9-]/g, "");
+
+  return [
+    ...videos.map((video) => ({
+      params: {
+        slug: toSlug(video.title),
+        type: "works",
+      },
+      props: { video, type: "works" },
+    })),
+    ...clients.map((video) => ({
+      params: {
+        slug: toSlug(video.title),
+        type: "client",
+      },
+      props: { video, type: "client" },
+    })),
+  ];
+}
+
+const { video: currentVideo, type } = Astro.props;
+const list = type === "client" ? clients : videos;
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>
+      {currentVideo.title} - arnemuench.de - Motion Designer aus Köln - After Effects,
+      Motion Graphics & Scripts
+    </title>
+    <meta
+      name="description"
+      content="Motion Designer aus Köln spezialisiert auf Motion Graphics, After Effects, Scripts und Sound Design. Infos über den Autor."
+    />
+    <meta
+      name="keywords"
+      content="motion design, motion graphics, after effects, köln, cologne, scripts, sound design"
+    />
+    <meta name="author" content="Arne Münch" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href={import.meta.env.BASE_URL + "apple-touch-icon.png"}
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href={import.meta.env.BASE_URL + "favicon-32x32.png"}
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href={import.meta.env.BASE_URL + "favicon-16x16.png"}
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href={import.meta.env.BASE_URL + "favicon.ico"}
+    />
+    <link rel="stylesheet" href={import.meta.env.BASE_URL + "style.css"} />
+  </head>
+
+  <body>
+    <div class="container">
+      <Header />
+
+      <main>
+        <div class="portfolio-wrapper">
+          <!-- 🎬 Hauptvideo -->
+          <div class="video-wrapper" data-ratio={currentVideo.ratio}>
+            <iframe
+              src={`https://player.vimeo.com/video/${currentVideo.id}?title=0&byline=0&portrait=0&color=dd5424`}
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen></iframe>
+          </div>
+
+          <!-- 📝 Beschreibung -->
+          <div class="video-description">
+            <p set:html={currentVideo.description} />
+          </div>
+
+          <!-- 🧱 GRID -->
+          <div class="video-grid">
+            {
+              list
+                .filter((v) => v.id !== currentVideo.id)
+                .map((video) => {
+                  const slug = video.title
+                    .toLowerCase()
+                    .replace(/\s+/g, "-")
+                    .replace(/[^a-z0-9-]/g, "");
+
+                  return (
+                    <a
+                      href={`${import.meta.env.BASE_URL}${type}/${slug}`}
+                      class="thumb"
+                    >
+                      <img
+                        data-id={video.id}
+                        data-ratio={video.ratio}
+                        alt={video.title}
+                      />
+                    </a>
+                  );
+                })
+            }
+          </div>
+        </div>
+      </main>
+      <Footer />
+    </div>
+
+    <script is:inline>
+      //video grid klicken und scroll
+      // 👉 Thumbnail Fade + Navigation (dein funktionierender Ansatz)
+      document.querySelectorAll("a.thumb").forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+
+          // 👉 MERKER setzen
+          sessionStorage.setItem("fromGrid", "true");
+
+          const img = link.querySelector("img");
+          if (!img) return;
+
+          img.style.transition = "opacity 0.2s ease";
+          img.style.opacity = "0";
+          window.location.href = link.href;
+          // setTimeout(() => {}, 0);
+        });
+      });
+
+      window.addEventListener("beforeunload", () => {
+        sessionStorage.setItem("scrollY", window.scrollY);
+      });
+
+      window.addEventListener("load", () => {
+        const wrapper = document.querySelector(".video-wrapper");
+
+        const fromGrid = sessionStorage.getItem("fromGrid");
+
+        if (!fromGrid) {
+          window.scrollTo(0, 0);
+        }
+
+        // 👉 gespeicherten Scroll wiederherstellen (optional)
+        const savedScroll = sessionStorage.getItem("scrollY");
+
+        if (savedScroll !== null && fromGrid) {
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              window.scrollTo(0, parseInt(savedScroll));
+            });
+          });
+        }
+
+        // 👉 danach prüfen ob Video sichtbar ist
+        function waitForCompleteLoad(callback) {
+          if (document.readyState === "complete") {
+            requestAnimationFrame(() => {
+              requestAnimationFrame(callback);
+            });
+          } else {
+            window.addEventListener("load", () => {
+              requestAnimationFrame(() => {
+                requestAnimationFrame(callback);
+              });
+            });
+          }
+        }
+        waitForCompleteLoad(() => {
+          if (!wrapper) return;
+
+          const rect = wrapper.getBoundingClientRect();
+
+          const isVisible = rect.top >= 0 && rect.bottom <= window.innerHeight;
+
+          if (!isVisible && fromGrid) {
+            const offset = 20;
+
+            const top =
+              wrapper.getBoundingClientRect().top + window.pageYOffset - offset;
+
+            window.scrollTo({
+              top,
+              behavior: "smooth",
+            });
+          }
+        });
+
+        document.body.classList.add("is-loaded");
+        sessionStorage.removeItem("fromGrid");
+      });
+    </script>
+
+    <script is:inline>
+      //thumbnail loaden
+      const thumbnailCache = JSON.parse(
+        localStorage.getItem("thumbnailCache") || "{}",
+      );
+
+      document.querySelectorAll(".video-grid img").forEach(async (img) => {
+        const id = img.dataset.id;
+
+        if (!id) return;
+
+        if (thumbnailCache[id]) {
+          img.src = thumbnailCache[id];
+          return;
+        }
+
+        try {
+          const res = await fetch(
+            `https://vimeo.com/api/oembed.json?url=https://vimeo.com/${id}`,
+          );
+          const data = await res.json();
+
+          img.src = data.thumbnail_url;
+
+          thumbnailCache[id] = data.thumbnail_url;
+          localStorage.setItem(
+            "thumbnailCache",
+            JSON.stringify(thumbnailCache),
+          );
+        } catch (err) {
+          console.error("Thumbnail Fehler:", id, err);
+        }
+      });
+    </script>
+
+    <script is:inline>
+      // ratio setzen
+      window.addEventListener("load", () => {
+        const wrapper = document.querySelector(".video-wrapper");
+
+        if (!wrapper) return;
+
+        const ratio = wrapper.dataset.ratio;
+
+        wrapper.classList.remove(
+          "video-16-10",
+          "video-4-3",
+          "video-1-1",
+          "video-235-100",
+        );
+
+        if (ratio && ratio !== "16/9") {
+          wrapper.classList.add("video-" + ratio.replace("/", "-"));
+        }
+      });
+    </script>
+  </body>
+</html>

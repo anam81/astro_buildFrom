@@ -1,0 +1,91 @@
+---
+const base = import.meta.env.BASE_URL;
+const currentPath = Astro.url.pathname;
+---
+
+<header class="site-header">
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
+        rel="stylesheet"
+    />
+
+    <div class="header-inner">
+        <!-- LOGO -->
+        <a href={import.meta.env.BASE_URL}>
+            <div id="logo-placeholder" class="logo-placeholder"></div>
+        </a>
+
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"
+            defer></script>
+
+        <script is:inline define:vars={{ base: import.meta.env.BASE_URL }}>
+            document.addEventListener("DOMContentLoaded", () => {
+                const logoOverlay = document.getElementById("logo-overlay");
+                if (!logoOverlay) return;
+
+                const fromGrid = sessionStorage.getItem("fromGrid");
+
+                const logoAnim = lottie.loadAnimation({
+                    container: logoOverlay,
+                    renderer: "svg",
+                    loop: false,
+                    autoplay: false,
+                    path: base + "assets/logo.json",
+                });
+
+                logoAnim.addEventListener("DOMLoaded", () => {
+                    if (fromGrid === "true") {
+                        const end = logoAnim.totalFrames;
+                        logoAnim.playSegments([end - 94, end], true);
+                    } else {
+                        setTimeout(() => {
+                            logoAnim.goToAndPlay(0, true); // wichtig!
+                        }, 850);
+                    }
+                });
+            });
+        </script>
+
+        <!-- MENU -->
+        <nav>
+            <ul class="menu">
+                <li
+                    class={currentPath.startsWith(`${base}works`)
+                        ? "active"
+                        : ""}
+                >
+                    <a href={import.meta.env.BASE_URL}>works</a>
+                </li>
+
+                <li
+                    class={currentPath.startsWith(`${base}client`)
+                        ? "active"
+                        : ""}
+                >
+                    <a href={import.meta.env.BASE_URL + "client"}>client work</a
+                    >
+                </li>
+
+                <li>
+                    <a
+                        href="https://www.instagram.com/arnemuench/"
+                        target="_blank">instagram</a
+                    >
+                </li>
+
+                <li
+                    class={currentPath.startsWith(`${base}about`)
+                        ? "active"
+                        : ""}
+                >
+                    <a href={import.meta.env.BASE_URL + "about"}>about me</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- LOTTIE OVERLAY -->
+        <div id="logo-overlay" class="logo-overlay"></div>
+    </div>
+</header>
