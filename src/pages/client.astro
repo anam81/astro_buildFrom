@@ -8,6 +8,13 @@ const toSlug = (title) =>
 		.replace(/[^a-z0-9-]/g, "");
 
 const firstSlug = toSlug(clients[0].title);
-
-return Astro.redirect(`/client/${firstSlug}`);
 ---
+
+<html>
+	<head>
+		<script>
+			window.location.replace(`/client/${firstSlug}`);
+		</script>
+	</head>
+	<body></body>
+</html>

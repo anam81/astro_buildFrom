@@ -8,6 +8,8 @@ const toSlug = (title) =>
 		.replace(/[^a-z0-9-]/g, "");
 
 const firstSlug = toSlug(videos[0].title);
-
-return Astro.redirect(`/works/${firstSlug}`);
 ---
+
+<script>
+	window.location.replace(`/works/${firstSlug}`);
+</script>
