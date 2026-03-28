@@ -10,6 +10,11 @@ const toSlug = (title) =>
 const firstSlug = toSlug(videos[0].title);
 ---
 
-<script>
-	window.location.replace(`/works/${firstSlug}`);
-</script>
+<html>
+	<head>
+		<script is:inline>
+			window.location.replace(`/works/${firstSlug}`);
+		</script>
+	</head>
+	<body></body>
+</html>
