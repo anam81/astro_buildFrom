@@ -4,13 +4,6 @@ import Footer from "../../components/Footer.astro";
 import { videos } from "../../data/videos.js";
 import { clients } from "../../data/videos_client.js";
 
-const toSlug = (title) =>
-  title
-    .toLowerCase()
-    .replace(/\s+/g, "-")
-    .replace(/[^a-z0-9-]/g, "");
-const allVideos = [...videos, ...clients];
-
 export function getStaticPaths() {
   const toSlug = (title) =>
     title
@@ -43,6 +36,7 @@ const list = type === "client" ? clients : videos;
 <!doctype html>
 <html lang="de">
   <head>
+    <link rel="stylesheet" href={import.meta.env.BASE_URL + "style.css"} />
     <meta charset="UTF-8" />
 
     <title>
@@ -82,7 +76,6 @@ const list = type === "client" ? clients : videos;
       type="image/x-icon"
       href={import.meta.env.BASE_URL + "favicon.ico"}
     />
-    <link rel="stylesheet" href={import.meta.env.BASE_URL + "style.css"} />
   </head>
 
   <body>
@@ -149,72 +142,71 @@ const list = type === "client" ? clients : videos;
           if (!img) return;
 
           img.style.transition = "opacity 0.3s ease";
-          img.style.opacity = "0";
+          img.style.opacity = "0.2";
           window.location.href = link.href;
           // setTimeout(() => {}, 0);
         });
       });
 
       window.addEventListener("beforeunload", () => {
-        sessionStorage.setItem("scrollY", window.scrollY);
+        const scrollFromBottom =
+          document.documentElement.scrollHeight -
+          window.innerHeight -
+          window.scrollY;
+
+        sessionStorage.setItem("scrollFromBottom", scrollFromBottom);
       });
 
       window.addEventListener("load", () => {
         const wrapper = document.querySelector(".video-wrapper");
-
         const fromGrid = sessionStorage.getItem("fromGrid");
 
         if (!fromGrid) {
           window.scrollTo(0, 0);
         }
 
-        // 👉 gespeicherten Scroll wiederherstellen (optional)
-        const savedScroll = sessionStorage.getItem("scrollY");
+        const savedFromBottom = sessionStorage.getItem("scrollFromBottom");
 
-        if (savedScroll !== null && fromGrid) {
+        if (savedFromBottom !== null && fromGrid) {
           requestAnimationFrame(() => {
             requestAnimationFrame(() => {
-              window.scrollTo(0, parseInt(savedScroll));
+              const top =
+                document.documentElement.scrollHeight -
+                window.innerHeight -
+                parseInt(savedFromBottom, 10);
+
+              window.scrollTo(0, top);
             });
           });
         }
 
-        // 👉 danach prüfen ob Video sichtbar ist
-        function waitForCompleteLoad(callback) {
-          if (document.readyState === "complete") {
-            requestAnimationFrame(() => {
-              requestAnimationFrame(callback);
-            });
-          } else {
-            window.addEventListener("load", () => {
-              requestAnimationFrame(() => {
-                requestAnimationFrame(callback);
+        // 👉 korrekt nach oben scrollen
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            if (!wrapper) return;
+
+            const rect = wrapper.getBoundingClientRect();
+            const isVisible =
+              rect.top >= 0 && rect.bottom <= window.innerHeight;
+
+            if (!isVisible && fromGrid) {
+              const offset = 20;
+
+              const top =
+                wrapper.getBoundingClientRect().top +
+                window.pageYOffset -
+                offset;
+
+              window.scrollTo({
+                top,
+                behavior: "smooth",
               });
-            });
-          }
-        }
-        waitForCompleteLoad(() => {
-          if (!wrapper) return;
+            }
 
-          const rect = wrapper.getBoundingClientRect();
-
-          const isVisible = rect.top >= 0 && rect.bottom <= window.innerHeight;
-
-          if (!isVisible && fromGrid) {
-            const offset = 20;
-
-            const top =
-              wrapper.getBoundingClientRect().top + window.pageYOffset - offset;
-
-            window.scrollTo({
-              top,
-              behavior: "smooth",
-            });
-          }
+            document.body.classList.add("is-loaded");
+            sessionStorage.removeItem("fromGrid");
+          });
         });
-
-        document.body.classList.add("is-loaded");
-        sessionStorage.removeItem("fromGrid");
       });
     </script>
 

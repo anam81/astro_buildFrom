@@ -10,11 +10,7 @@ const toSlug = (title) =>
 const firstSlug = toSlug(videos[0].title);
 ---
 
-<html>
-	<head>
-		<script is:inline>
-			window.location.replace(`/works/${JSON.stringify(firstSlug)}`);
-		</script>
-	</head>
-	<body></body>
-</html>
+<meta
+	http-equiv="refresh"
+	content={`0; url=${import.meta.env.BASE_URL}works/${firstSlug}`}
+/>

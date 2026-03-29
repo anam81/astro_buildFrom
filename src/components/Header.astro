@@ -21,7 +21,7 @@ const currentPath = Astro.url.pathname;
             defer></script>
 
         <script is:inline define:vars={{ base: import.meta.env.BASE_URL }}>
-            document.addEventListener("DOMContentLoaded", () => {
+            window.addEventListener("load", function () {
                 const logoOverlay = document.getElementById("logo-overlay");
                 if (!logoOverlay) return;
 
@@ -38,11 +38,11 @@ const currentPath = Astro.url.pathname;
                 logoAnim.addEventListener("DOMLoaded", () => {
                     if (fromGrid === "true") {
                         const end = logoAnim.totalFrames;
-                        logoAnim.playSegments([end - 94, end], true);
+                        logoAnim.playSegments([end - 85, end], true);
                     } else {
                         setTimeout(() => {
                             logoAnim.goToAndPlay(0, true); // wichtig!
-                        }, 850);
+                        }, 400);
                     }
                 });
             });
