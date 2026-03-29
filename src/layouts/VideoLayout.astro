@@ -42,7 +42,7 @@ const firstWorkVideo = videos[0];
                         {
                             list
                                 .filter((v) => v.id !== video.id)
-                                .map((v, index) => {
+                                .map((v) => {
                                     const slug = v.title
                                         .toLowerCase()
                                         .replace(/\s+/g, "-")
