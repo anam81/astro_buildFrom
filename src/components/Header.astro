@@ -1,6 +1,7 @@
 ---
 const base = import.meta.env.BASE_URL;
 const currentPath = Astro.url.pathname;
+const { firstClientSlug } = Astro.props;
 ---
 
 <header class="site-header">
@@ -52,7 +53,8 @@ const currentPath = Astro.url.pathname;
         <nav>
             <ul class="menu">
                 <li
-                    class={currentPath.startsWith(`${base}works`)
+                    class={currentPath === base ||
+                    currentPath.startsWith(`${base}works`)
                         ? "active"
                         : ""}
                 >
@@ -64,8 +66,7 @@ const currentPath = Astro.url.pathname;
                         ? "active"
                         : ""}
                 >
-                    <a href={import.meta.env.BASE_URL + "client"}>client work</a
-                    >
+                    <a href={firstClientSlug}>client work</a>
                 </li>
 
                 <li>
