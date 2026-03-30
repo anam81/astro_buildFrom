@@ -71,7 +71,7 @@ body.is-loaded {
     display: flex;
     justify-content: space-between;
     /* Logo links, Menü rechts */
-    align-items: flex-start;
+    align-items: flex-end;
     /* Items oben ausrichten */
     flex-wrap: nowrap;
 }
@@ -123,13 +123,18 @@ nav {
 
 .menu {
     display: flex;
-    flex-wrap: wrap;
     flex-wrap: nowrap;
     justify-content: flex-end;
     gap: 6px 15px;
     list-style: none;
     margin: 0;
     padding: 0;
+    margin-bottom: 20px; /* Abstand nach unten */
+}
+@media (max-width: 700px) {
+    .menu {
+        margin-bottom: 14px; /* Abstand nach unten */
+    }
 }
 @media (max-width: 470px) {
     .menu {
