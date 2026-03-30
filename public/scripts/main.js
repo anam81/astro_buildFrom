@@ -1,19 +1,18 @@
 // Thumbnail Click + Fade
-document.addEventListener("click", (e) => {
-    const link = e.target.closest("a.thumb");
-    if (!link) return;
+document.querySelectorAll("a.thumb").forEach((link) => {
+    link.addEventListener("click", (e) => {
+        e.preventDefault();
 
-    e.preventDefault();
+        sessionStorage.setItem("fromGrid", "true");
 
-    sessionStorage.setItem("fromGrid", "true");
+        const img = link.querySelector("img");
+        if (!img) return;
 
-    const img = link.querySelector("img");
-    if (img) {
         img.style.transition = "opacity 0.3s ease";
         img.style.opacity = "0.2";
-    }
 
-    window.location.href = link.href;
+        window.location.href = link.href;
+    });
 });
 
 // Scroll speichern
