@@ -133,7 +133,7 @@ nav {
 }
 @media (max-width: 700px) {
     .menu {
-        margin-bottom: 14px; /* Abstand nach unten */
+        margin-bottom: 17px; /* Abstand nach unten */
     }
 }
 @media (max-width: 470px) {
