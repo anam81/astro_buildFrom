@@ -5,7 +5,7 @@ export const videos = [
         description:
             'A showcase of my work.<br>' +
             'Browse personal work below or visit my ' +
-            '<a href="/client">client projects page.</a>'
+            '<a href="client">client projects page.</a>'
     },
     {
         id: "1174569556",
