@@ -207,10 +207,13 @@ nav {
 }
 
 .video-description {
-    margin-top: 2%;
+    margin-top: 0;
     font-size: 1rem;
     color: var(--text-color);
     text-align: left;
+}
+.video-description p {
+    margin-top: 0.9rem;
 }
 .video-description a {
     color: var(--link-color);
@@ -227,7 +230,7 @@ nav {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 15px;
-    margin-top: 4%;
+    margin-top: 1.5rem;
 }
 
 /* Thumbnail */
