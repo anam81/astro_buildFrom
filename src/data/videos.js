@@ -2,7 +2,10 @@ export const videos = [
     { 
         id: "43720180", 
         title: "demoreel", 
-        description: "A showcase of my work"
+        description:
+            'A showcase of my work.<br>' +
+            'Browse personal work below or visit my ' +
+            '<a href="/client">client projects page.</a>'
     },
     {
         id: "1174569556",

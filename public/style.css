@@ -213,7 +213,7 @@ nav {
     text-align: left;
 }
 .video-description p {
-    margin-top: 0.9rem;
+    margin-top: 0.75rem;
 }
 .video-description a {
     color: var(--link-color);

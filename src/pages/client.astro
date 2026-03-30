@@ -1,16 +1,8 @@
 ---
+import VideoLayout from "../layouts/VideoLayout.astro";
 import { clients } from "../data/videos_client.js";
 
-const toSlug = (title) =>
-	title
-		.toLowerCase()
-		.replace(/\s+/g, "-")
-		.replace(/[^a-z0-9-]/g, "");
-
-const firstSlug = toSlug(clients[0].title);
+const firstVideo = clients[0];
 ---
 
-<meta
-	http-equiv="refresh"
-	content={`0; url=${import.meta.env.BASE_URL}client/${firstSlug}`}
-/>
+<VideoLayout video={firstVideo} type="client" list={clients} />
