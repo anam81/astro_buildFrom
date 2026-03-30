@@ -86,6 +86,7 @@ const list = await Promise.all(
                     <!-- 🎬 Video -->
                     <div class="video-wrapper" data-ratio={video.ratio}>
                         <iframe
+                            loading="lazy"
                             src={`https://player.vimeo.com/video/${video.id}?title=0&byline=0&portrait=0&color=dd5424`}
                             allow="autoplay; fullscreen; picture-in-picture"
                             allowfullscreen></iframe>

@@ -1,27 +1,28 @@
 // Thumbnail Click + Fade
-document.querySelectorAll("a.thumb").forEach((link) => {
-    link.addEventListener("click", (e) => {
-        e.preventDefault();
+document.addEventListener("click", (e) => {
+    const link = e.target.closest("a.thumb");
+    if (!link) return;
 
-        sessionStorage.setItem("fromGrid", "true");
+    e.preventDefault();
 
-        const img = link.querySelector("img");
-        if (!img) return;
+    sessionStorage.setItem("fromGrid", "true");
 
+    const img = link.querySelector("img");
+    if (img) {
         img.style.transition = "opacity 0.3s ease";
         img.style.opacity = "0.2";
+    }
 
-        window.location.href = link.href;
-    });
+    window.location.href = link.href;
 });
 
 // Scroll speichern
-window.addEventListener("beforeunload", () => {
+window.addEventListener("pagehide", () => {
     sessionStorage.setItem("scrollY", window.scrollY);
 });
 
 // Scroll-Logik + Load
-window.addEventListener("load", () => {
+window.addEventListener("DOMContentLoaded", () => {
     const wrapper = document.querySelector(".video-wrapper");
     const fromGrid = sessionStorage.getItem("fromGrid");
     const savedScrollY = sessionStorage.getItem("scrollY");
@@ -31,36 +32,22 @@ window.addEventListener("load", () => {
     }
 
     if (savedScrollY !== null && fromGrid) {
-        requestAnimationFrame(() => {
-            requestAnimationFrame(() => {
-                window.scrollTo(0, parseInt(savedScrollY, 10));
-            });
-        });
+        window.scrollTo(0, parseInt(savedScrollY, 10));
     }
 
     requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-            if (wrapper) {
-                const rect = wrapper.getBoundingClientRect();
-                const isVisible =
-                    rect.top >= 0 && rect.bottom <= window.innerHeight;
+        if (wrapper && fromGrid) {
+            const rect = wrapper.getBoundingClientRect();
 
-                if (!isVisible && fromGrid) {
-                    const offset = 20;
-
-                    const top =
-                        rect.top + window.pageYOffset - offset;
-
-                    window.scrollTo({
-                        top,
-                        behavior: "smooth",
-                    });
-                }
+            if (rect.top < 0 || rect.bottom > window.innerHeight) {
+                window.scrollTo({
+                    top: rect.top + window.pageYOffset - 20,
+                    behavior: "smooth",
+                });
             }
+        }
 
-            document.body.classList.add("is-loaded");
-            sessionStorage.removeItem("fromGrid");
-        });
+        document.body.classList.add("is-loaded");
     });
 
     // Ratio
@@ -78,4 +65,8 @@ window.addEventListener("load", () => {
             wrapper.classList.add("video-" + ratio.replace("/", "-"));
         }
     }
+});
+
+window.addEventListener("load", () => {
+    sessionStorage.removeItem("fromGrid");
 });
