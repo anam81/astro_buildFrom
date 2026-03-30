@@ -136,12 +136,13 @@ nav {
         margin-bottom: 17px; /* Abstand nach unten */
     }
 }
-@media (max-width: 470px) {
+@media (max-width: 556px) {
     .menu {
         flex-direction: column;
         align-items: flex-end;
         /* rechtsbündig */
         gap: 6px;
+        margin-bottom: 15px;
     }
     .menu li a {
         font-size: 0.9rem;
