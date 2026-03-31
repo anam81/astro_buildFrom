@@ -10,7 +10,7 @@ document.addEventListener("click", (e) => {
 
     const img = link.querySelector("img");
     if (img) {
-        img.style.transition = "opacity 0.3s ease";
+        img.style.transition = "opacity 0.6s ease";
         img.style.opacity = "0.2";
     }
 
