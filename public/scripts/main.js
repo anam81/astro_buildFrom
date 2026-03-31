@@ -10,8 +10,8 @@ document.addEventListener("click", (e) => {
 
     const img = link.querySelector("img");
     if (img) {
-        img.style.transition = "opacity 0.6s ease";
-        img.style.opacity = "0.2";
+        img.style.transition = "opacity 0.8s ease";
+        img.style.opacity = "0.15";
     }
 
     window.location.href = link.href;
