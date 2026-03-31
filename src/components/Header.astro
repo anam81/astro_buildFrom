@@ -34,14 +34,24 @@ const currentPath = Astro.url.pathname;
                     autoplay: false,
                     path: base + "assets/logo.json",
                 });
-
-                logoAnim.addEventListener("DOMLoaded", () => {
+                logoAnim.addEventListener("data_ready", () => {
                     if (fromGrid === "true") {
                         const end = logoAnim.totalFrames;
-                        logoAnim.playSegments([end - 85, end], true);
+                        const start = end - 85;
+
+                        //weirder code nötig um auf start zu setzen vorm spielen der letzten frames
+                        for (let i = start - 3; i < start; i++) {
+                            setTimeout(() => {
+                                logoAnim.goToAndStop(i, true);
+                            }, 0);
+                        }
+
+                        setTimeout(() => {
+                            logoAnim.playSegments([start, end], true);
+                        }, 100);
                     } else {
                         setTimeout(() => {
-                            logoAnim.goToAndPlay(0, true); // wichtig!
+                            logoAnim.goToAndPlay(0, true);
                         }, 400);
                     }
                 });
@@ -65,7 +75,8 @@ const currentPath = Astro.url.pathname;
                         ? "active"
                         : ""}
                 >
-                    <a href={import.meta.env.BASE_URL + "client"}>client work</a>
+                    <a href={import.meta.env.BASE_URL + "client"}>client work</a
+                    >
                 </li>
 
                 <li>
