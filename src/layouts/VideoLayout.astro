@@ -1,14 +1,13 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import { videos } from "../data/videos.js";
 
-const { video, type, list: videos } = Astro.props;
-const firstWorkVideo = videos[0];
+const { video, type, list } = Astro.props;
+const firstWorkVideo = list[0];
 
-// 👉 HIER: list bauen + Thumbnails holen
-const list = await Promise.all(
-    videos.map(async (v) => {
+// 👉 HIER: listThumbUrls bauen + Thumbnails holen
+const listThumbUrls = await Promise.all(
+    list.map(async (v) => {
         try {
             const res = await fetch(
                 `https://vimeo.com/api/oembed.json?url=https://vimeo.com/${v.id}`,
@@ -95,7 +94,7 @@ const list = await Promise.all(
                     <!-- 🧱 Grid -->
                     <div class="video-grid">
                         {
-                            list
+                            listThumbUrls
                                 .filter((v) => v.id !== video.id)
                                 .map((v) => {
                                     const slug = v.title
