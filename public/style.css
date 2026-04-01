@@ -282,14 +282,15 @@ nav {
 }
 .thumb-text {
     position: absolute;
-    bottom: 2%;
-    left: 2%;
+    bottom: 0%;
+    left: 0%;
     color: white;
     pointer-events: none;
     font-weight: 700;
+    opacity: 0.87;
     padding: 1px 6px;
-    border-radius: 4px;
-    background: rgba(0, 0, 0, 0.35);
+    border-radius: 2px;
+    background: rgba(0, 0, 0, 0.3);
 }
 
 .thumb img {
