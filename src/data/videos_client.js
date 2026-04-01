@@ -21,6 +21,11 @@ export const clients = [
                     "<a href='https://www.youtube.com/watch?v=d9KdfnNRlV4' target='_blank'>Watch the full video</a>"
     },
     {
+        id: "1179168211",
+        title: "Die Ehe - ZDF Magazin Royale",
+        description: "I created this animation for Böhmermann's ZDF Magazin Royale, satirizing the institution of marriage."
+    },
+    {
         id: "260226326",
         title: "energy future",
         description: "This was part of a pitch for the relaunch of an energy provider’s website. My role was to animate the pages, navigation, and transitions.",
