@@ -1,0 +1,154 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<!doctype html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Datenschutzerklärung – Arne Münch</title>
+
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href={import.meta.env.BASE_URL + "apple-touch-icon.png"}
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href={import.meta.env.BASE_URL + "favicon-32x32.png"}
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href={import.meta.env.BASE_URL + "favicon-16x16.png"}
+        />
+        <link
+            rel="icon"
+            type="image/x-icon"
+            href={import.meta.env.BASE_URL + "favicon.ico"}
+        />
+        <link rel="stylesheet" href={import.meta.env.BASE_URL + "style.css"} />
+    </head>
+
+    <body>
+        <div class="container">
+            <Header />
+
+            <main>
+                <div class="portfolio-wrapper">
+                    <div class="impressum-content">
+                        <p><strong>Datenschutzerklärung</strong></p>
+
+                        <p><strong>1. Verantwortlicher</strong></p>
+                        <p>
+                            Arne Münch<br />
+                            Heinrich-Bürgers-Str.2-4<br />
+                            50827 Köln<br />
+                            E-Mail:
+                            <a href="mailto:mail@arnemuench.de">mail@arnemuench.de</a>
+                        </p>
+
+                        <p><strong>2. Hosting und Server-Logfiles</strong></p>
+                        <p>
+                            Beim Aufruf dieser Website werden automatisch
+                            Informationen durch den Hostinganbieter erhoben und
+                            in sogenannten Server-Logfiles gespeichert.
+                        </p>
+                        <p>Dies umfasst insbesondere:</p>
+                        <p>
+                            IP-Adresse<br />
+                            Datum und Uhrzeit des Zugriffs<br />
+                            Browsertyp und Version<br />
+                            Betriebssystem
+                        </p>
+                        <p>
+                            Die Verarbeitung erfolgt zur Gewährleistung eines
+                            sicheren und stabilen Betriebs der Website.
+                        </p>
+
+                        <p><strong>3. Cookies</strong></p>
+                        <p>
+                            Diese Website verwendet keine Cookies zu Tracking-
+                            oder Analysezwecken.
+                        </p>
+
+                        <p>
+                            <strong
+                                >4. Lokale Schriftarten</strong
+                            >
+                        </p>
+                        <p>
+                            Die auf dieser Website verwendeten Schriftarten
+                            werden lokal bereitgestellt. Es erfolgt keine
+                            Verbindung zu Servern von Google.
+                        </p>
+
+                        <p><strong>5. Einbindung von Vimeo</strong></p>
+                        <p>
+                            Auf dieser Website sind Videos des Anbieters Vimeo
+                            eingebunden. Beim Abspielen eines Videos wird eine
+                            Verbindung zu den Servern von Vimeo hergestellt.
+                        </p>
+                        <p>
+                            Dabei können personenbezogene Daten (insbesondere
+                            die IP-Adresse) an Vimeo übertragen werden.
+                        </p>
+                        <p>
+                            Anbieter:<br />
+                            Vimeo Inc.<br />
+                            555 West 18th Street<br />
+                            New York, NY 10011, USA
+                        </p>
+
+                        <p><strong>6. Cloudflare</strong></p>
+                        <p>
+                            Diese Website nutzt Dienste von Cloudflare zur
+                            Optimierung und Absicherung der Website.
+                        </p>
+                        <p>
+                            Dabei kann es zur Verarbeitung personenbezogener
+                            Daten, insbesondere der IP-Adresse, kommen.
+                        </p>
+                        <p>
+                            Anbieter:<br />
+                            Cloudflare, Inc.<br />
+                            101 Townsend St<br />
+                            San Francisco, CA 94107, USA
+                        </p>
+
+                        <p><strong>7. Kontaktaufnahme</strong></p>
+                        <p>
+                            Wenn Sie per E-Mail mit mir in Kontakt treten,
+                            werden die von Ihnen übermittelten Daten zur
+                            Bearbeitung der Anfrage gespeichert.
+                        </p>
+
+                        <p><strong>8. Ihre Rechte</strong></p>
+                        <p>Sie haben jederzeit das Recht auf:</p>
+                        <p>
+                            Auskunft über Ihre gespeicherten Daten<br />
+                            Berichtigung<br />
+                            Löschung<br />
+                            Einschränkung der Verarbeitung<br />
+                            Widerspruch gegen die Verarbeitung
+                        </p>
+
+                        <p>
+                            Zur Ausübung dieser Rechte können Sie mich jederzeit
+                            kontaktieren.
+                        </p>
+                    </div>
+                </div>
+            </main>
+            <Footer />
+        </div>
+        <script is:inline>
+            document.body.classList.add("is-loaded");
+        </script>
+    </body>
+</html>

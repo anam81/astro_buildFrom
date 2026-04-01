@@ -3,12 +3,39 @@
     --hover-color: #555555;
     --text-color: #555555;
     --greylink-color: #888888;
-    --greyhover-color: #bbbbbb;
+    --greyhover-color: #aaaaaa;
 }
-/* gesamte Seite Font */
+/* roboto-regular */
+@font-face {
+    font-display: swap;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/roboto-v51-latin-regular.woff2') format('woff2');
+}
+/* roboto-italic */
+@font-face {
+    font-display: swap;
+    font-family: 'Roboto';
+    font-style: italic;
+    font-weight: 400;
+    src: url('/fonts/roboto-v51-latin-italic.woff2') format('woff2');
+}
+/* roboto-700 - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    src: url('/fonts/roboto-v51-latin-700.woff2') format('woff2');
+}
+
 body,
 html {
-    font-family: 'Roboto Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+strong {
+    font-weight: 700;
 }
 html::before {
     content: "";
