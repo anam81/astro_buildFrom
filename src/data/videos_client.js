@@ -41,7 +41,7 @@ export const clients = [
         title: "Spotify Hashtag-Generator",
         description: "I animated this video teasing Spotify´s Hashtag-Generator. Design by " +
             "<a href='https://www.dayy.com/' target='_blank'>dayy</a>",
-        textOnThumb: "Spotify"
+        textOnThumb: "Spotify x Audi"
     },
     {
         id: "1174525738",
@@ -49,13 +49,13 @@ export const clients = [
         description: "A pitch we did in 2015. We designed the On-Air Packaging for a German TV Channel Show (ZDF). "+
                     "This is the opener.<br>"+
                     "Agency: <a href='https://www.studio-paeper.tv/' target='_blank'>Studio Paeper</a><br>",
-        textOnThumb: "ZDF Pitch"
+        textOnThumb: "ZDF (Pitch)"
     },
     { 
         id: "221156673", 
         title: "Starkregen", 
         description: "Graphic animation for science TV program 'Quarks & Co', WDR",
-        textOnThumb: "WDR"
+        textOnThumb: "WDR Quarks"
     },
     {
         id: "221081352",
@@ -63,57 +63,57 @@ export const clients = [
         description: "I animated this opener for the tv show ZDF Adieu.<br>" +
             "Agency: <a href='https://www.studio-paeper.tv/' target='_blank'>Studio Paeper</a><br>" +
             "music: The Fall by Peter Rudenko licensed under CC BY 4.0",
-        textOnThumb: "ZDF"
+        textOnThumb: "ZDF Adieu"
     },
     {
         id: "1175435060",
         title: "ZDF Auslandsjournal",
         description: "This graphic I designed and developed for ZDF Auslandsjournal: Die Doku: Kampf ums Wasser<br>" +
                     "Agency: <a href='https://www.studio-paeper.tv/' target='_blank'>Studio Paeper</a><br>",
-        textOnThumb: "ZDF"
+        textOnThumb: "ZDF Auslandsjournal"
     },
     {
         id: "1175443814",
         title: "WDR Cosmo, Iran im Herzen",
         description: "For a WDR Cosmo podcast trailer (Iran im Herzen), I animated these graphics as an intro.<br>" +
             "Agency: <a href='https://www.studio-paeper.tv/' target='_blank'>Studio Paeper</a><br>",
-        textOnThumb: "WDR"
+        textOnThumb: "WDR Cosmo"
     },
     { 
         id: "222078676", 
         title: "westart studio background", 
         description: "I delevoped many of the screenbackgrounds of the WDR Westart live studio. These are some of those.",
-        textOnThumb: "WDR"
+        textOnThumb: "WDR Westart"
     },
     { 
         id: "763383592", 
         title: "Gesundes Sperma", 
         description: "Compositing and animation for science tv program Quarks, WDR",
-        textOnThumb: "WDR"
+        textOnThumb: "WDR Quarks"
     },
     { 
         id: "760875033", 
         title: "Warum werden Tiere im Zoo getötet", 
         description: "Animation for science tv program Quarks, WDR",
-        textOnThumb: "WDR"
+        textOnThumb: "WDR Quarks"
     },
     { 
         id: "760873301", 
         title: "7Dinge_Stimme", 
         description: "Animation for science tv program Quarks, WDR",
-        textOnThumb: "WDR"
+        textOnThumb: "WDR Quarks"
     },
     { 
         id: "260259258", 
         title: "multiresistente Keime", 
         description: "Animation for science tv program Quarks, WDR",
-        textOnThumb: "WDR"
+        textOnThumb: "WDR Quarks"
     },
     { 
         id: "90454734", 
         title: "ARD Radio Feature", 
         description: 'I animated this TV Trailer for "Das ARD Radio Feature"',
-        textOnThumb: "ARD"
+        textOnThumb: "ARD Radio Feature"
     },
     {
         id: "50453842",
