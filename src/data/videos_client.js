@@ -2,14 +2,16 @@ export const clients = [
     {
         id: "1174945206",
         title: "ARD one Idents",
-        description: "I created these vibrant TV Channel Idents for ARD ONE."
+        description: "I created these vibrant TV Channel Idents for ARD ONE.",
+        textOnThumb: "ARD ONE"
     },
     {
         id: "1175130607",
         title: "Atmen: Breathe Your Life",
         description: "I made the graphics for the ARD documentation 'Atmen: Breathe Your Life.' "+
                     "Among others I composed and animated this energetic intro/opener.",
-        ratio: "235/100"
+        ratio: "235/100",
+        textOnThumb: "ARD"
     },
     {
         id: "1175321911",
@@ -18,94 +20,111 @@ export const clients = [
                     "The initiative explores decentralized systems that could provide reliable access to clean drinking water " +
                     "for communities in the region.<br>"+
                     "Directed by <a href='https://www.heinzenziob.de' target='_blank'>Florian Heinzen-Ziob</a><br>"+
-                    "<a href='https://www.youtube.com/watch?v=d9KdfnNRlV4' target='_blank'>Watch the full video</a>"
+                    "<a href='https://www.youtube.com/watch?v=d9KdfnNRlV4' target='_blank'>Watch the full video</a>",
+        textOnThumb: "HydroDeSal"
     },
     {
         id: "1179168211",
         title: "Die Ehe - ZDF Magazin Royale",
-        description: "I created this animation for Böhmermann's ZDF Magazin Royale, satirizing the institution of marriage."
+        description: "I created this animation for Böhmermann's ZDF Magazin Royale, satirizing the institution of marriage.",
+        textOnThumb: "ZDF Magazin Royale"
     },
     {
         id: "260226326",
         title: "energy future",
         description: "This was part of a pitch for the relaunch of an energy provider’s website. My role was to animate the pages, navigation, and transitions.",
-        ratio: "16/10"
+        ratio: "16/10",
+        textOnThumb: "UX Presentation"
     },
     {
         id: "221156939",
         title: "Spotify Hashtag-Generator",
         description: "I animated this video teasing Spotify´s Hashtag-Generator. Design by " +
-            "<a href='https://www.dayy.com/' target='_blank'>dayy</a>"
+            "<a href='https://www.dayy.com/' target='_blank'>dayy</a>",
+        textOnThumb: "Spotify"
     },
     {
         id: "1174525738",
         title: "Opener for TV Show (pitch)",
         description: "A pitch we did in 2015. We designed the On-Air Packaging for a German TV Channel Show (ZDF). "+
                     "This is the opener.<br>"+
-                    "Agency: <a href='https://www.studio-paeper.tv/' target='_blank'>Studio Paeper</a><br>"
+                    "Agency: <a href='https://www.studio-paeper.tv/' target='_blank'>Studio Paeper</a><br>",
+        textOnThumb: "ZDF Pitch"
     },
     { 
         id: "221156673", 
         title: "Starkregen", 
-        description: "Graphic animation for science TV program 'Quarks & Co', WDR"
+        description: "Graphic animation for science TV program 'Quarks & Co', WDR",
+        textOnThumb: "WDR"
     },
     {
         id: "221081352",
         title: "Opener ZDF Adieu",
         description: "I animated this opener for the tv show ZDF Adieu.<br>" +
             "Agency: <a href='https://www.studio-paeper.tv/' target='_blank'>Studio Paeper</a><br>" +
-            "music: The Fall by Peter Rudenko licensed under CC BY 4.0"
+            "music: The Fall by Peter Rudenko licensed under CC BY 4.0",
+        textOnThumb: "ZDF"
     },
     {
         id: "1175435060",
         title: "ZDF Auslandsjournal",
         description: "This graphic I designed and developed for ZDF Auslandsjournal: Die Doku: Kampf ums Wasser<br>" +
-                    "Agency: <a href='https://www.studio-paeper.tv/' target='_blank'>Studio Paeper</a><br>"
+                    "Agency: <a href='https://www.studio-paeper.tv/' target='_blank'>Studio Paeper</a><br>",
+        textOnThumb: "ZDF"
     },
     {
         id: "1175443814",
         title: "WDR Cosmo, Iran im Herzen",
         description: "For a WDR Cosmo podcast trailer (Iran im Herzen), I animated these graphics as an intro.<br>" +
-            "Agency: <a href='https://www.studio-paeper.tv/' target='_blank'>Studio Paeper</a><br>"
+            "Agency: <a href='https://www.studio-paeper.tv/' target='_blank'>Studio Paeper</a><br>",
+        textOnThumb: "WDR"
     },
     { 
         id: "222078676", 
         title: "westart studio background", 
-        description: "I delevoped many of the screenbackgrounds of the WDR Westart live studio. These are some of those."
+        description: "I delevoped many of the screenbackgrounds of the WDR Westart live studio. These are some of those.",
+        textOnThumb: "WDR"
     },
     { 
         id: "763383592", 
         title: "Gesundes Sperma", 
-        description: "Compositing and animation for science tv program Quarks, WDR"
+        description: "Compositing and animation for science tv program Quarks, WDR",
+        textOnThumb: "WDR"
     },
     { 
         id: "760875033", 
         title: "Warum werden Tiere im Zoo getötet", 
-        description: "Animation for science tv program Quarks, WDR"
+        description: "Animation for science tv program Quarks, WDR",
+        textOnThumb: "WDR"
     },
     { 
         id: "760873301", 
         title: "7Dinge_Stimme", 
-        description: "Animation for science tv program Quarks, WDR"
+        description: "Animation for science tv program Quarks, WDR",
+        textOnThumb: "WDR"
     },
     { 
         id: "260259258", 
         title: "multiresistente Keime", 
-        description: "Animation for science tv program Quarks, WDR"
+        description: "Animation for science tv program Quarks, WDR",
+        textOnThumb: "WDR"
     },
     { 
         id: "90454734", 
         title: "ARD Radio Feature", 
-        description: 'I animated this TV Trailer for "Das ARD Radio Feature"'
+        description: 'I animated this TV Trailer for "Das ARD Radio Feature"',
+        textOnThumb: "ARD"
     },
     {
         id: "50453842",
         title: "Counter IAA 2011",
-        description: "I designed and animated this counter for a car presentation at the IAA 2011."
+        description: "I designed and animated this counter for a car presentation at the IAA 2011.",
+        textOnThumb: "IAA"
     },
     { 
         id: "74857016", 
         title: "CityLeaks Documentary Titles", 
-        description: "Titles/Graphics for City Leaks Cologne Festival Documentary by Ömer Mutlu"
+        description: "Titles/Graphics for City Leaks Cologne Festival Documentary by Ömer Mutlu",
+        textOnThumb: "CityLeaks"
     }
 ];

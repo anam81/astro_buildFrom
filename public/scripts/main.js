@@ -61,3 +61,18 @@ if (wrapper) {
 window.addEventListener("load", () => {
     sessionStorage.removeItem("fromGrid");
 });
+
+//fontsize auf thumbs
+document.querySelectorAll(".thumb").forEach((thumb) => {
+    const text = thumb.querySelector(".thumb-text");
+    if (!text) return;
+    const updateFontSize = () => {
+        const width = thumb.offsetWidth;
+        // 👉 hier steuerst du die Skalierung
+        const fontSize = width * 0.055;
+        text.style.fontSize = fontSize + "px";
+    };
+    updateFontSize();
+    const observer = new ResizeObserver(updateFontSize);
+    observer.observe(thumb);
+});

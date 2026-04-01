@@ -7,7 +7,7 @@ const firstWorkVideo = list[0];
 
 // 👉 HIER: listThumbUrls bauen + Thumbnails holen
 const listThumbUrls = await Promise.all(
-    list.map(async (v) => {
+    list.map(async (v: any) => {
         try {
             const res = await fetch(
                 `https://vimeo.com/api/oembed.json?url=https://vimeo.com/${v.id}`,
@@ -119,6 +119,12 @@ const listThumbUrls = await Promise.all(
                                                 loading="lazy"
                                                 decoding="async"
                                             />
+
+                                            {v.textOnThumb && (
+                                                <span class="thumb-text">
+                                                    {v.textOnThumb}
+                                                </span>
+                                            )}
                                         </a>
                                     );
                                 })

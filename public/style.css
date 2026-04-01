@@ -5,6 +5,8 @@
     --greylink-color: #888888;
     --greyhover-color: #aaaaaa;
 }
+/* https: //gwfh.mranftl.com/fonts
+da runterladen und css kopieren */
 /* roboto-regular */
 @font-face {
     font-display: swap;
@@ -277,6 +279,17 @@ nav {
     opacity: 1;
     transition: opacity 0.4s ease;
     /* Rückweg = 0.3s */
+}
+.thumb-text {
+    position: absolute;
+    bottom: 2%;
+    left: 2%;
+    color: white;
+    pointer-events: none;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.35);
 }
 
 .thumb img {
