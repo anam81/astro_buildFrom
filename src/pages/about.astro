@@ -83,7 +83,7 @@ import Footer from "../components/Footer.astro";
                                 50827 Köln<br />
                                 Mobile: +49 178 1448296<br />
                                 USt-IdNr.:DE297699560<br />
-                                <span id="emailContact">email contact</span>
+                                Mail: <span id="emailContact">hier email zusammensetzen</span>
                             </p>
                         </div>
                     </div>
@@ -93,22 +93,20 @@ import Footer from "../components/Footer.astro";
             <Footer />
         </div>
         <script>
-            // doppelter Klick Email
-            const emailUser = "a-muench";
-            const emailDomain = "gmx.de";
+            (function () {
+                const emailUser = "a-muench";
+                const emailDomain = "gmx.de";
 
-            const emailSpan = document.getElementById("emailContact");
-            emailSpan.addEventListener("click", () => {
-                const email = `${emailUser}@${emailDomain}`;
+                const email = emailUser + "@" + emailDomain;
 
-                const mailtoLink = document.createElement("a");
-                mailtoLink.href = `mailto:${email}`;
-                mailtoLink.textContent = email;
-                mailtoLink.style.textDecoration = "none";
-                mailtoLink.style.transition = "color 0.2s";
+                const emailLink = document.createElement("a");
+                emailLink.href = "mailto:" + email;
+                emailLink.textContent = email;
 
-                emailSpan.replaceWith(mailtoLink);
-            });
+                const container = document.getElementById("emailContact");
+                container.textContent = ""; // alten Text entfernen
+                container.appendChild(emailLink);
+            })();
         </script>
         <script is:inline>
             document.body.classList.add("is-loaded");
