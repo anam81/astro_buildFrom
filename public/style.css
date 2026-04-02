@@ -266,7 +266,7 @@ nav {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     /* gap: 10px; */
     /* gap: 1vw; */
-    gap: calc(0.6vw + 4px);
+    gap: min(calc(0.8vw + 3px), 10.2px);
     margin-top: 1.5rem;
 }
 
