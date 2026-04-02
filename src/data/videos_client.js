@@ -34,7 +34,7 @@ export const clients = [
         title: "energy future",
         description: "This was part of a pitch for the relaunch of an energy provider’s website. My role was to animate the pages, navigation, and transitions.",
         ratio: "16/10",
-        textOnThumb: "UX Presentation"
+        textOnThumb: "Page Presentation"
     },
     {
         id: "221156939",
