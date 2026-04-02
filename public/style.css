@@ -264,7 +264,9 @@ nav {
 .video-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 15px;
+    /* gap: 10px; */
+    /* gap: 1vw; */
+    gap: calc(0.6vw + 4px);
     margin-top: 1.5rem;
 }
 
