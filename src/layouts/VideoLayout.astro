@@ -14,7 +14,7 @@ const listThumbUrls = await Promise.all(
             );
             const data = await res.json();
 
-            const upgradedThumb = upscaleVimeoThumb(data.thumbnail_url, 350);
+            const upgradedThumb = upscaleVimeoThumb(data.thumbnail_url, 400);
             return {
                 ...v,
                 thumbnail: upgradedThumb,
