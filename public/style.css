@@ -284,6 +284,9 @@ nav {
     position: absolute;
     bottom: 0%;
     left: 0%;
+    /* transform: translateX(-50%);
+    white-space: nowrap; */
+        /* 🔥 verhindert Zeilenumbruch */
     color: white;
     pointer-events: none;
     font-weight: 700;
