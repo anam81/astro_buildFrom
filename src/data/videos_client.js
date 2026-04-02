@@ -11,7 +11,7 @@ export const clients = [
         description: "I made the graphics for the ARD documentation 'Atmen: Breathe Your Life.' "+
                     "Among others I composed and animated this energetic intro/opener.",
         ratio: "235/100",
-        textOnThumb: "ARD"
+        textOnThumb: "ARD Documentation"
     },
     {
         id: "1175321911",

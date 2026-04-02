@@ -14,9 +14,11 @@ const listThumbUrls = await Promise.all(
             );
             const data = await res.json();
 
+            const upgradedThumb = upscaleVimeoThumb(data.thumbnail_url, 514);
+            console.log(upgradedThumb);
             return {
                 ...v,
-                thumbnail: data.thumbnail_url,
+                thumbnail: upgradedThumb,
             };
         } catch (err) {
             return {
@@ -26,6 +28,36 @@ const listThumbUrls = await Promise.all(
         }
     }),
 );
+function upscaleVimeoThumb(url: string, targetWidth: number) {
+    if (!url) return url;
+
+    // Fall 1: _640x360
+    const matchWxH = url.match(/_(\d+)x(\d+)/);
+
+    if (matchWxH) {
+        const originalWidth = parseInt(matchWxH[1], 10);
+        const originalHeight = parseInt(matchWxH[2], 10);
+
+        if (!originalWidth || !originalHeight) return url;
+
+        const aspectRatio = originalHeight / originalWidth;
+        const newHeight = Math.round(targetWidth * aspectRatio);
+
+        return url.replace(/_\d+x\d+/, `_${targetWidth}x${newHeight}`);
+    }
+
+    // Fall 2: nur _640 (→ 16:9 annehmen)
+    const matchWidthOnly = url.match(/_(\d+)(?!x)/);
+
+    if (matchWidthOnly) {
+        const aspectRatio = 9 / 16; // 16:9
+        const newHeight = Math.round(targetWidth * aspectRatio);
+
+        return url.replace(/_(\d+)/, `_${targetWidth}x${newHeight}`);
+    }
+
+    return url;
+}
 ---
 
 <!doctype html>
