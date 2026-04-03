@@ -41,9 +41,8 @@ import "../style.css";
 
             <main>
                 <div class="portfolio-wrapper">
-                    <p class="impressum-content"><strong>Impressum</strong></p>
-
                     <div class="impressum-content">
+                        <h1 class="impressum-content headline">Impressum</h1>
                         <p>Verantwortlich für den Inhalt:</p>
                         <p>
                             Arne Münch<br />
@@ -58,12 +57,12 @@ import "../style.css";
                         </p>
                     </div>
                 </div>
-            </main>
 
-            <Footer />
+                <Footer />
+            </main>
+            <script is:inline>
+                document.body.classList.add("is-loaded");
+            </script>
         </div>
-        <script is:inline>
-            document.body.classList.add("is-loaded");
-        </script>
     </body>
 </html>

@@ -36,6 +36,9 @@ body,
 html {
     font-family: 'Roboto', sans-serif;
 }
+p {
+    margin: 0;
+}
 strong {
     font-weight: 700;
 }
@@ -372,7 +375,7 @@ nav {
 /* Footer */
 .site-footer {
     text-align: left;
-    margin-top: 35px;
+    margin-top: 60px;
     color: var(--text-color);
     /* dunkelgrau */
     font-size: 0.9rem;
@@ -417,6 +420,10 @@ nav {
     color: var(--text-color);
     /* dunkel bis mittelgrau */
     line-height: 1.5;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
 }
 
 .impressum-content a {
@@ -447,7 +454,12 @@ nav {
     font-size: 0.9rem;
     color: var(--text-color);
     line-height: 1.5;
-    margin-top: 2%;
+    margin: 0;
+    margin-top: 0.5rem;
+}
+.headline {
+    font-weight: 700;
+    margin-top: 0.9rem;
 }
 
 /* Container für Foto + Kontakt */
@@ -476,6 +488,9 @@ nav {
     /* Text nimmt verbleibenden Platz, schrumpft bei Bedarf */
     min-width: 160px;
     /* optional: verhindert zu kleines Textfeld */
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 .about-contact a {
     color: var(--link-color);
