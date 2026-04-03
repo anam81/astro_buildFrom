@@ -1,6 +1,7 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import "../style.css";
 ---
 
 <!doctype html>
@@ -45,7 +46,6 @@ import Footer from "../components/Footer.astro";
             type="image/x-icon"
             href={import.meta.env.BASE_URL + "favicon.ico"}
         />
-        <link rel="stylesheet" href={import.meta.env.BASE_URL + "style.css"} />
     </head>
 
     <body data-page="about">
@@ -83,7 +83,9 @@ import Footer from "../components/Footer.astro";
                                 50827 Köln<br />
                                 Mobile: +49 178 1448296<br />
                                 USt-IdNr.:DE297699560<br />
-                                Mail: <span id="emailContact">hier email zusammensetzen</span>
+                                Mail: <span id="emailContact"
+                                    >hier email zusammensetzen</span
+                                >
                             </p>
                         </div>
                     </div>

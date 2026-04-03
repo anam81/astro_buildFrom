@@ -1,6 +1,7 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import "../style.css";
 ---
 
 <!doctype html>
@@ -32,7 +33,6 @@ import Footer from "../components/Footer.astro";
             type="image/x-icon"
             href={import.meta.env.BASE_URL + "favicon.ico"}
         />
-        <link rel="stylesheet" href={import.meta.env.BASE_URL + "style.css"} />
     </head>
 
     <body>
@@ -52,7 +52,9 @@ import Footer from "../components/Footer.astro";
                             Mobile: +49 178 1448296<br />
                             USt-IdNr.: DE297699560<br />
                             E-Mail:
-                            <a href="mailto:mail@arnemuench.de">mail@arnemuench.de</a>
+                            <a href="mailto:mail@arnemuench.de"
+                                >mail@arnemuench.de</a
+                            >
                         </p>
                     </div>
                 </div>
