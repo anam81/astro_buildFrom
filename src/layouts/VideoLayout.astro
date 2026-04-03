@@ -1,7 +1,6 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import "../styles/style.css";
 
 const { video, type, list } = Astro.props;
 const firstWorkVideo = list[0];
@@ -101,7 +100,7 @@ function upscaleVimeoThumb(url: string, targetWidth: number) {
             type="image/x-icon"
             href={import.meta.env.BASE_URL + "favicon.ico"}
         />
-        <!-- <link rel="stylesheet" href={import.meta.env.BASE_URL + "style.css"} /> -->
+        <link rel="stylesheet" href={import.meta.env.BASE_URL + "style.css"} />
     </head>
 
     <body>
