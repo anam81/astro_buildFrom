@@ -2,6 +2,7 @@
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "../style.css";
+import mainScript from "../scripts/main.js?url";
 
 const { video, type, list } = Astro.props;
 const firstWorkVideo = list[0];
@@ -166,6 +167,6 @@ function upscaleVimeoThumb(url: string, targetWidth: number) {
 
             <Footer />
         </div>
-        <script src="/scripts/main.js" defer></script>
+        <script src={mainScript} defer></script>
     </body>
 </html>
