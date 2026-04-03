@@ -119,7 +119,7 @@ export const clients = [
         id: "50453842",
         title: "Counter IAA 2011",
         description: "I designed and animated this counter for a car presentation at the IAA 2011.",
-        textOnThumb: "IAA"
+        textOnThumb: "IAA Presentation Counter"
     },
     { 
         id: "74857016", 
