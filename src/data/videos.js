@@ -4,8 +4,10 @@ export const videos = [
         title: "demoreel", 
         description:
             'A showcase of my work.<br>' +
-            'Browse personal work below or visit my ' +
-            '<a href="client">client projects page.</a>'
+            'Browse personal work below, visit my ' +
+            '<a href="client">client projects page </a>' +
+            'or learn more about my work as a ' +
+            '<a href = "motion-design-koeln">motion designer in Cologne</a>.'
     },
     {
         id: "1174569556",
