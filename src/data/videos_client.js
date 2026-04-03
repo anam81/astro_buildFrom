@@ -120,11 +120,11 @@ export const clients = [
         title: "Counter IAA 2011",
         description: "I designed and animated this counter for a car presentation at the IAA 2011.",
         textOnThumb: "IAA Presentation Counter"
-    },
-    { 
-        id: "74857016", 
-        title: "CityLeaks Documentary Titles", 
-        description: "Titles/Graphics for City Leaks Cologne Festival Documentary by Ömer Mutlu",
-        textOnThumb: "CityLeaks"
     }
+    // { 
+    //     id: "74857016", 
+    //     title: "CityLeaks Documentary Titles", 
+    //     description: "Titles/Graphics for City Leaks Cologne Festival Documentary by Ömer Mutlu",
+    //     textOnThumb: "CityLeaks"
+    // }
 ];
