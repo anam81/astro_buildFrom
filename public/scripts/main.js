@@ -54,7 +54,7 @@ if (wrapper) {
     );
 
     if (ratio && ratio !== "16/9") {
-        // wrapper.classList.add("video-" + ratio.replace("/", "-"));
+        wrapper.classList.add("video-" + ratio.replace("/", "-"));
     }
 }
 
