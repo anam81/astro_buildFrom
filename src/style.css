@@ -467,7 +467,8 @@ nav {
     display: flex;
     flex-wrap: wrap;
     /* wichtig: Text kann unter das Bild rutschen */
-    gap: 17px;
+    column-gap: 17px;
+    row-gap: 12px; /* kleinerer Abstand nach unten */
     /* Abstand zwischen Bild und Text */
     margin-top: 3%;
     align-items: flex-start;
@@ -482,7 +483,7 @@ nav {
     font-size: 0.9rem;
     color: var(--text-color);
     line-height: 1.5;
-    padding-right: 10px;
+    /* padding-right: 10px; */
     /* kleiner Abstand rechts */
     flex: 1 1 0;
     /* Text nimmt verbleibenden Platz, schrumpft bei Bedarf */
