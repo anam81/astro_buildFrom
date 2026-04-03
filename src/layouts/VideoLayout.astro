@@ -3,7 +3,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "../style.css";
 
-const buildVersion = Date.now(); // simpel & effektiv
+const buildVersion = BUILD_TIME; // simpel & effektiv main.js versionieren wegen noCache
 
 const { video, type, list } = Astro.props;
 const firstWorkVideo = list[0];
