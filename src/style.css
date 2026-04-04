@@ -189,10 +189,10 @@ nav {
     font-style: italic;
 }
 
-.menu li a:hover {
+/* .menu li a:hover {
     color: var(--hover-color);
     /* etwas heller beim Hover */
-}
+} */
 
 .menu li.active a {
     color: var(--text-color);
@@ -203,7 +203,7 @@ nav {
         color: var(--hover-color);
     }
 }
-/* verhindert hover auf mobile */
+/* nur hover auf desktop */
 
 /* Hauptcontainer: max 900px, 95% Breite, zentriert */
 .container {
