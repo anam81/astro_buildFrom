@@ -5,7 +5,7 @@ export const videos = [
         description:
             'A showcase of my work.<br>' +
             'Browse personal work below, visit my ' +
-            '<a href="client" style="white-space: nowrap;">client projects page</a> ' +
+            '<a href="motion-graphics-clients" style="white-space: nowrap;">client projects page</a> ' +
             'or learn more about my work as a ' +
             '<a href="motion-design-koeln" style="white-space: nowrap;">motion designer in Cologne</a>.'
     },
