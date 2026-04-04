@@ -61,14 +61,3 @@ if (wrapper) {
 window.addEventListener("load", () => {
     sessionStorage.removeItem("fromGrid");
 });
-
-//zurück im browser linkstate resetten
-window.addEventListener("pageshow", () => {
-    document.querySelectorAll(".menu li a").forEach(link => {
-        const li = link.parentElement;
-        li.classList.toggle(
-            "active",
-            link.pathname === window.location.pathname
-        );
-    });
-});
