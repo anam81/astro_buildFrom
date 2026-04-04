@@ -144,7 +144,7 @@ function upscaleVimeoThumb(url: string, targetWidth: number) {
                                             href={
                                                 type === "works" &&
                                                 v.id === firstWorkVideo.id
-                                                    ? import.meta.env.BASE_URL
+                                                    ? `${import.meta.env.BASE_URL}animation-works/`
                                                     : `${import.meta.env.BASE_URL}${type}/${slug}`
                                             }
                                             class="thumb"
