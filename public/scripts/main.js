@@ -61,3 +61,18 @@ if (wrapper) {
 window.addEventListener("load", () => {
     sessionStorage.removeItem("fromGrid");
 });
+
+//active state korrekt setzen
+window.addEventListener("pageshow", () => {
+    document.querySelectorAll(".menu li a").forEach(link => {
+        const li = link.parentElement;
+
+        // erst alles resetten
+        li.classList.remove("active");
+
+        // dann korrekt setzen
+        if (link.pathname === window.location.pathname) {
+            li.classList.add("active");
+        }
+    });
+});
