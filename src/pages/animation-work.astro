@@ -1,0 +1,8 @@
+---
+import VideoLayout from "../layouts/VideoLayout.astro";
+import { videos } from "../data/videos.js";
+
+const firstVideo = videos[0];
+---
+
+<VideoLayout video={firstVideo} type="works" list={videos} />

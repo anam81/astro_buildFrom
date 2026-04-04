@@ -11,12 +11,13 @@ export function getStaticPaths() {
       .replace(/[^a-z0-9-]/g, "");
 
   const worksWithoutFirst = videos.slice(1);
+  const clientsWithoutFirst = clients.slice(1);
   return [
     ...worksWithoutFirst.map((video) => ({
       params: { slug: toSlug(video.title), type: "works" },
       props: { video, type: "works" },
     })),
-    ...clients.map((video) => ({
+    ...clientsWithoutFirst.map((video) => ({
       params: { slug: toSlug(video.title), type: "client" },
       props: { video, type: "client" },
     })),

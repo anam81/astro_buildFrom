@@ -6,7 +6,7 @@ import "../style.css";
 const buildVersion = BUILD_TIME; // simpel & effektiv main.js versionieren wegen noCache
 
 const { video, type, list } = Astro.props;
-const firstWorkVideo = list[0];
+const firstVideo = list[0];
 
 const description =
     type === "client"
@@ -142,9 +142,12 @@ function upscaleVimeoThumb(url: string, targetWidth: number) {
                                     return (
                                         <a
                                             href={
-                                                type === "works" &&
-                                                v.id === firstWorkVideo.id
-                                                    ? `${import.meta.env.BASE_URL}animation-works/`
+                                                v.id === firstVideo.id
+                                                    ? type === "works"
+                                                        ? `${import.meta.env.BASE_URL}animation-work/`
+                                                        : type === "client"
+                                                          ? `${import.meta.env.BASE_URL}motion-graphics-clients/`
+                                                          : `${import.meta.env.BASE_URL}`
                                                     : `${import.meta.env.BASE_URL}${type}/${slug}`
                                             }
                                             class="thumb"
