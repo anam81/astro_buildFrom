@@ -198,6 +198,9 @@ nav {
     color: var(--hover-color);
     /* ausgewählter Punkt heller */
 }
+.menu li a:focus {
+    color: var(--link-color);
+}
 
 
 
