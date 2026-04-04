@@ -1,6 +1,6 @@
 :root {
-    --link-color: #E53E04;
-    --hover-color: #f37e57;
+    --link-color: hsl(15, 97%, 46%);
+    --hover-color: hsl(12, 100%, 65%);
     --text-color: #555555;
     --greylink-color: #888888;
     --greyhover-color: #aaaaaa;
@@ -193,12 +193,11 @@ nav {
     color: var(--hover-color);
 } */
  @media (hover: hover) and (pointer: fine) {
-     .menu li a:hover {
-         color: var(--hover-color);
-     }
- }
-
- /* nur hover auf desktop */
+    .menu li a:hover {
+        color: var(--hover-color);
+    }
+}
+/* nur hover auf desktop */
 
 .menu li.active a {
     color: var(--text-color);
