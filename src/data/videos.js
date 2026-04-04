@@ -33,7 +33,7 @@ export const videos = [
     {
         id: "1174586225",
         title: "amazing sight",
-        description: "Another character animation I created — really happy with how it turned out."
+        description: "Another character animation loop I created — really happy with how it turned out."
     },
     { 
         id: "363118107", 
