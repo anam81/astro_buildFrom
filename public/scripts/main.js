@@ -61,12 +61,3 @@ if (wrapper) {
 window.addEventListener("load", () => {
     sessionStorage.removeItem("fromGrid");
 });
-
-window.addEventListener("pageshow", () => {
-    document.querySelectorAll(".menu li").forEach(li => {
-        li.classList.toggle(
-            "active",
-            li.querySelector("a")?.pathname === window.location.pathname
-        );
-    });
-});
