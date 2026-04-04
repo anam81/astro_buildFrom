@@ -198,7 +198,12 @@ nav {
     color: var(--text-color);
     /* ausgewählter Punkt heller */
 }
-
+@media (hover: hover) and (pointer: fine) {
+    .menu li a:hover {
+        color: var(--hover-color);
+    }
+}
+/* verhindert hover auf mobile */
 
 /* Hauptcontainer: max 900px, 95% Breite, zentriert */
 .container {
