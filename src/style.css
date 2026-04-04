@@ -1,6 +1,6 @@
 :root {
     --link-color: #E53E04;
-    --hover-color: #777777;
+    --hover-color: #f37e57;
     --text-color: #555555;
     --greylink-color: #888888;
     --greyhover-color: #aaaaaa;
@@ -190,7 +190,7 @@ nav {
 }
 
 .menu li a:hover {
-    color: var(--text-color);
+    color: var(--hover-color);
     /* etwas heller beim Hover */
 }
 
