@@ -191,19 +191,20 @@ nav {
 
 /* .menu li a:hover {
     color: var(--hover-color);
-    /* etwas heller beim Hover */
 } */
+ @media (hover: hover) and (pointer: fine) {
+     .menu li a:hover {
+         color: var(--hover-color);
+     }
+ }
+
+ /* nur hover auf desktop */
 
 .menu li.active a {
     color: var(--text-color);
     /* ausgewählter Punkt heller */
 }
-@media (hover: hover) and (pointer: fine) {
-    .menu li a:hover {
-        color: var(--hover-color);
-    }
-}
-/* nur hover auf desktop */
+
 
 /* Hauptcontainer: max 900px, 95% Breite, zentriert */
 .container {
@@ -262,9 +263,15 @@ nav {
     text-decoration: none;
     transition: color 0.2s;
 }
-.video-description a:hover {
+/* .video-description a:hover {
     color: var(--hover-color);
+} */
+@media (hover: hover) and (pointer: fine) {
+    .video-description a:hover {
+        color: var(--hover-color);
+    }
 }
+
 
 /* Thumbnail Grid */
 
