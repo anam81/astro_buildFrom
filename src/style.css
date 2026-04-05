@@ -473,9 +473,10 @@ nav {
     transition: color 0.2s;
     cursor: pointer;
 }
-.about-content a:hover {
-    color: var(--hover-color);
-    /* Hover-Effekt */
+ @media (hover: hover) and (pointer: fine) {
+    .about-content a:hover {
+        color: var(--hover-color);
+    }
 }
 .headline {
     font-weight: 700;
