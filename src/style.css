@@ -467,6 +467,16 @@ nav {
     margin: 0;
     margin-top: 0.5rem;
 }
+.about-content a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.2s;
+    cursor: pointer;
+}
+.about-content a:hover {
+    color: var(--hover-color);
+    /* Hover-Effekt */
+}
 .headline {
     font-weight: 700;
     margin-top: 0.9rem;
