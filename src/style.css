@@ -42,11 +42,6 @@ p {
 strong {
     font-weight: 700;
 }
-@media (hover: hover) and (pointer: fine) {
-    a:hover {
-        color: var(--hover-color);
-    }
-}
 html::before {
     content: "";
     position: fixed;
@@ -328,24 +323,24 @@ nav {
     transition: filter 0.4s ease;
     /* Rückweg = 0.3s */
 }
-
-.thumb:hover {
+@media (hover: hover) and (pointer: fine) {
+    .thumb:hover {
     opacity: 0.8;
     transition: opacity 0.5s ease;
     /* Hover-In = 0.5s */
+    }
+    .thumb:hover img {
+        filter: brightness(1.1);
+        transition: filter 0.5s ease;
+        /* Hover-In = 0.5s */
+    }
+    /* Fade für einzelnes Thumb */
+    .thumb.fade-out {
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
 }
 
-.thumb:hover img {
-    filter: brightness(1.1);
-    transition: filter 0.5s ease;
-    /* Hover-In = 0.5s */
-}
-
-/* Fade für einzelnes Thumb */
-.thumb.fade-out {
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
 
 /* maximal 4 Spalten */
 
