@@ -338,15 +338,6 @@ nav {
     opacity: 0;
     transition: opacity 0.5s ease;
 }
-/* Mobile Reset */
-@media (hover: none) {
-  .thumb:hover {
-    opacity: 1;
-  }
-  .thumb:hover img {
-    filter: none;
-  }
-}
 
 /* maximal 4 Spalten */
 
