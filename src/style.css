@@ -323,7 +323,7 @@ nav {
     transition: filter 0.4s ease;
     /* Rückweg = 0.3s */
 }
-@media (any-hover: hover) {
+@media (hover: hover) and (pointer: fine) {
   .thumb:hover {
     opacity: 0.8;
     transition: opacity 0.5s ease;
@@ -338,7 +338,15 @@ nav {
     opacity: 0;
     transition: opacity 0.5s ease;
 }
-
+/* Mobile Reset */
+@media (hover: none) {
+  .thumb:hover {
+    opacity: 1;
+  }
+  .thumb:hover img {
+    filter: none;
+  }
+}
 
 /* maximal 4 Spalten */
 
@@ -406,12 +414,13 @@ nav {
     transition: color 0.2s;
     /* sanfter Übergang */
 }
-
-.site-footer a.impressum:hover {
-    color: var(--greyhover-color);
-    /* etwas heller beim Hover */
-    text-decoration: none;
-    /* Unterstreichung verhindern */
+@media (hover: hover) and (pointer: fine) {
+    .site-footer a.impressum:hover {
+        color: var(--greyhover-color);
+        /* etwas heller beim Hover */
+        text-decoration: none;
+        /* Unterstreichung verhindern */
+    }
 }
 
 .site-footer p {
@@ -471,7 +480,7 @@ nav {
     transition: color 0.2s;
     cursor: pointer;
 }
- @media (hover: hover) and (pointer: fine) {
+@media (hover: hover) and (pointer: fine) {
     .about-content a:hover {
         color: var(--hover-color);
     }
