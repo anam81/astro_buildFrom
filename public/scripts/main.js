@@ -16,6 +16,17 @@ document.addEventListener("click", (e) => {
 
     window.location.href = link.href;
 });
+window.addEventListener("pageshow", (event) => {
+    if (event.persisted || sessionStorage.getItem("fromGrid")) {
+        // Alle Thumbs zurücksetzen
+        document.querySelectorAll("a.thumb img").forEach(img => {
+            img.style.opacity = "1";
+            img.style.transition = "";
+        });
+
+        sessionStorage.removeItem("fromGrid");
+    }
+});
 
 // Scroll speichern
 window.addEventListener("pagehide", () => {
