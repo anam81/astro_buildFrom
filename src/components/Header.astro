@@ -55,18 +55,19 @@ const currentPath = Astro.url.pathname;
                 <li
                     class={currentPath === base ||
                     currentPath.startsWith(`${base}works`) ||
-                    currentPath.startsWith(`${base}animation-work`)
+                    currentPath === `${base}motion-design`
                         ? "active"
                         : ""}
                 >
-                    <a href={import.meta.env.BASE_URL + "animation-work"}
+                    <a href={import.meta.env.BASE_URL + "motion-design"}
                         >works</a
                     >
                 </li>
 
                 <li
-                    class={currentPath.startsWith(`${base}motion-graphics-clients`) ||
-                            currentPath.startsWith(`${base}client`)
+                    class={currentPath.startsWith(
+                        `${base}motion-graphics-clients`,
+                    ) || currentPath.startsWith(`${base}client`)
                         ? "active"
                         : ""}
                 >
