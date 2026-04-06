@@ -55,7 +55,8 @@ const currentPath = Astro.url.pathname;
                 <li
                     class={currentPath === base ||
                     currentPath.startsWith(`${base}works`) ||
-                    currentPath === `${base}motion-design`
+                    currentPath === `${base}motion-design` ||
+                    currentPath.startsWith(`${base}motion-design/`)
                         ? "active"
                         : ""}
                 >
