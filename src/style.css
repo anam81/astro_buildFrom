@@ -42,6 +42,11 @@ p {
 strong {
     font-weight: 700;
 }
+@media (hover: hover) and (pointer: fine) {
+    a:hover {
+        color: var(--hover-color);
+    }
+}
 html::before {
     content: "";
     position: fixed;
