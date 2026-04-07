@@ -140,11 +140,11 @@ function upscaleVimeoThumb(url: string, targetWidth: number) {
                                             href={
                                                 v.id === firstVideo.id
                                                     ? type === "works"
-                                                        ? "/motion-design"
+                                                        ? "/motion-design/"
                                                         : type === "client"
-                                                          ? "/motion-graphics-clients"
+                                                          ? "/motion-graphics-clients/"
                                                           : "/"
-                                                    : `/${type}/${slug}`
+                                                    : `/${type}/${slug}/`
                                             }
                                             class="thumb"
                                         >
