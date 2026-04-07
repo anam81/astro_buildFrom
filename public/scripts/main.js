@@ -16,6 +16,7 @@ document.addEventListener("click", (e) => {
 
     window.location.href = link.href;
 });
+
 window.addEventListener("pageshow", (event) => {
     if (event.persisted || sessionStorage.getItem("fromGrid")) {
         // Alle Thumbs zurücksetzen
@@ -23,8 +24,6 @@ window.addEventListener("pageshow", (event) => {
             img.style.opacity = "1";
             img.style.transition = "";
         });
-
-        sessionStorage.removeItem("fromGrid");
     }
 });
 
@@ -68,7 +67,3 @@ if (wrapper) {
         wrapper.classList.add("video-" + ratio.replace("/", "-"));
     }
 }
-
-window.addEventListener("load", () => {
-    sessionStorage.removeItem("fromGrid");
-});

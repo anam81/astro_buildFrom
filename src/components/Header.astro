@@ -1,103 +1,57 @@
 ---
-const base = import.meta.env.BASE_URL;
 const currentPath = Astro.url.pathname;
 ---
 
 <header class="site-header">
     <div class="header-inner">
         <!-- LOGO -->
-        <a href={import.meta.env.BASE_URL}>
+        <a href="/">
             <div id="logo-placeholder" class="logo-placeholder"></div>
         </a>
 
-        <script src="/scripts/lottie.min.js" defer></script>
-        <script is:inline define:vars={{ base: import.meta.env.BASE_URL }}>
-            window.addEventListener("load", function () {
-                const logoOverlay = document.getElementById("logo-overlay");
-                if (!logoOverlay) return;
-
-                const fromGrid = sessionStorage.getItem("fromGrid");
-
-                const logoAnim = lottie.loadAnimation({
-                    container: logoOverlay,
-                    renderer: "svg",
-                    loop: false,
-                    autoplay: false,
-                    path: base + "assets/logo.json",
-                });
-                logoAnim.addEventListener("data_ready", () => {
-                    if (fromGrid === "true") {
-                        const end = logoAnim.totalFrames;
-                        const start = end - 85;
-
-                        //weirder code nötig um auf start zu setzen vorm spielen der letzten frames
-                        for (let i = start - 3; i < start; i++) {
-                            setTimeout(() => {
-                                logoAnim.goToAndStop(i, true);
-                            }, 0);
-                        }
-
-                        setTimeout(() => {
-                            logoAnim.playSegments([start, end], true);
-                        }, 100);
-                    } else {
-                        setTimeout(() => {
-                            logoAnim.goToAndPlay(0, true);
-                        }, 400);
-                    }
-                });
-            });
-        </script>
+        <!-- LOTTIE OVERLAY -->
+        <div id="logo-overlay" class="logo-overlay"></div>
 
         <!-- MENU -->
         <nav>
             <ul class="menu">
                 <li
-                    class={currentPath === base ||
-                    currentPath.startsWith(`${base}works`) ||
-                    currentPath === `${base}motion-design` ||
-                    currentPath.startsWith(`${base}motion-design/`)
+                    class={currentPath === "/" ||
+                    currentPath.startsWith("/works") ||
+                    currentPath === "/motion-design" ||
+                    currentPath.startsWith("/motion-design/")
                         ? "active"
                         : ""}
                 >
-                    <a href={import.meta.env.BASE_URL + "motion-design"}
-                        >works</a
-                    >
+                    <a href="/motion-design">works</a>
                 </li>
 
                 <li
-                    class={currentPath.startsWith(
-                        `${base}motion-graphics-clients`,
-                    ) || currentPath.startsWith(`${base}client`)
+                    class={currentPath.startsWith("/motion-graphics-clients") ||
+                    currentPath.startsWith("/client")
                         ? "active"
                         : ""}
                 >
-                    <a
-                        href={import.meta.env.BASE_URL +
-                            "motion-graphics-clients"}>client work</a
-                    >
+                    <a href="/motion-graphics-clients">client work</a>
                 </li>
 
                 <li>
                     <a
                         href="https://www.instagram.com/arnemuench/"
-                        target="_blank">instagram</a
+                        target="_blank"
                     >
+                        instagram
+                    </a>
                 </li>
 
                 <li
-                    class={currentPath.startsWith(`${base}motion-design-koeln`)
+                    class={currentPath.startsWith("/motion-design-koeln")
                         ? "active"
                         : ""}
                 >
-                    <a href={import.meta.env.BASE_URL + "motion-design-koeln"}
-                        >about me</a
-                    >
+                    <a href="/motion-design-koeln">about me</a>
                 </li>
             </ul>
         </nav>
-
-        <!-- LOTTIE OVERLAY -->
-        <div id="logo-overlay" class="logo-overlay"></div>
     </div>
 </header>

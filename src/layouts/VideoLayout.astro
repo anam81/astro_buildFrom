@@ -88,25 +88,21 @@ function upscaleVimeoThumb(url: string, targetWidth: number) {
         <link
             rel="apple-touch-icon"
             sizes="180x180"
-            href={import.meta.env.BASE_URL + "apple-touch-icon.png"}
+            href="/apple-touch-icon.png"
         />
         <link
             rel="icon"
             type="image/png"
             sizes="32x32"
-            href={import.meta.env.BASE_URL + "favicon-32x32.png"}
+            href="/favicon-32x32.png"
         />
         <link
             rel="icon"
             type="image/png"
             sizes="16x16"
-            href={import.meta.env.BASE_URL + "favicon-16x16.png"}
+            href="/favicon-16x16.png"
         />
-        <link
-            rel="icon"
-            type="image/x-icon"
-            href={import.meta.env.BASE_URL + "favicon.ico"}
-        />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     </head>
 
     <body>
@@ -144,11 +140,11 @@ function upscaleVimeoThumb(url: string, targetWidth: number) {
                                             href={
                                                 v.id === firstVideo.id
                                                     ? type === "works"
-                                                        ? `${import.meta.env.BASE_URL}motion-design`
+                                                        ? "/motion-design"
                                                         : type === "client"
-                                                          ? `${import.meta.env.BASE_URL}motion-graphics-clients`
-                                                          : `${import.meta.env.BASE_URL}`
-                                                    : `${import.meta.env.BASE_URL}${type}/${slug}`
+                                                          ? "/motion-graphics-clients"
+                                                          : "/"
+                                                    : `/${type}/${slug}`
                                             }
                                             class="thumb"
                                         >
@@ -176,5 +172,7 @@ function upscaleVimeoThumb(url: string, targetWidth: number) {
             <Footer />
         </div>
         <script src={`/scripts/main.js?v=${buildVersion}`} defer></script>
+        <script src="/scripts/lottie.min.js" defer></script>
+        <script src={`/scripts/logo-lottie.js?v=${buildVersion}`} defer></script>
     </body>
 </html>

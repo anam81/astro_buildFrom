@@ -2,6 +2,7 @@
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "../style.css";
+const buildVersion = BUILD_TIME; // simpel & effektiv main.js versionieren wegen noCache
 ---
 
 <!doctype html>
@@ -14,25 +15,21 @@ import "../style.css";
         <link
             rel="apple-touch-icon"
             sizes="180x180"
-            href={import.meta.env.BASE_URL + "apple-touch-icon.png"}
+            href="/apple-touch-icon.png"
         />
         <link
             rel="icon"
             type="image/png"
             sizes="32x32"
-            href={import.meta.env.BASE_URL + "favicon-32x32.png"}
+            href="/favicon-32x32.png"
         />
         <link
             rel="icon"
             type="image/png"
             sizes="16x16"
-            href={import.meta.env.BASE_URL + "favicon-16x16.png"}
+            href="/favicon-16x16.png"
         />
-        <link
-            rel="icon"
-            type="image/x-icon"
-            href={import.meta.env.BASE_URL + "favicon.ico"}
-        />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     </head>
 
     <body>
@@ -42,7 +39,9 @@ import "../style.css";
             <main>
                 <div class="portfolio-wrapper">
                     <div class="impressum-content">
-                        <h1 class="impressum-content headline">Datenschutzerklärung</h1>
+                        <h1 class="impressum-content headline">
+                            Datenschutzerklärung
+                        </h1>
 
                         <p><strong>1. Verantwortlicher</strong></p>
                         <p>
@@ -145,5 +144,8 @@ import "../style.css";
         <script is:inline>
             document.body.classList.add("is-loaded");
         </script>
+        <script src="/scripts/lottie.min.js" defer></script>
+        <script src={`/scripts/logo-lottie.js?v=${buildVersion}`} defer
+        ></script>
     </body>
 </html>

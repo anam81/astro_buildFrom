@@ -5,7 +5,6 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
     site: 'https://arnemuench.de',
     integrations: [sitemap()],
-    base: '/',
     compressHTML: false,
     vite: {
         define: {
