@@ -118,7 +118,7 @@ export const videos = [
     title: "ejercicio nocturno", 
     description: {
       en: "a kinetic type animation experiment",
-      de: "ein kinetisches Typografie Experiment"
+      de: "Ein kinetisches Typografie Experiment"
     }
   }
 ];
