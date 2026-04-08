@@ -201,13 +201,13 @@ nav {
 
 @media (max-width: 556px) {
     .site-header {
-        padding-top: 3px;
+        padding-top: 1px;
     }
     .menu {
         flex-direction: column;
         align-items: flex-end;
         /* rechtsbündig */
-        gap: 5.65px;
+        gap: 5px;
         margin-bottom: 15px;
     }
 
