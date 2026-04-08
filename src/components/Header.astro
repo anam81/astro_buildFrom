@@ -1,0 +1,81 @@
+---
+const currentPath = Astro.url.pathname;
+const currentLang = currentPath.startsWith("/en") ? "en" : "de";
+const pathWithoutLang = currentPath.replace(/^\/(en|de)/, "");
+// Ziel-Links
+const enPath = `/en${pathWithoutLang}`;
+const dePath = `/de${pathWithoutLang}`;
+
+const labels = {
+  en: {
+    works: "works",
+    clients: "client work",
+    insta: "instagram",
+    about: "about me",
+  },
+  de: {
+    works: "Arbeiten",
+    clients: "Kundenprojekte",
+    insta: "Instagram",
+    about: "Über mich",
+  },
+};
+const t = labels[currentLang];
+---
+
+<header class="site-header">
+  <div class="header-inner">
+    <!-- LOGO -->
+    <a href={`/${currentLang}/`}>
+      <div id="logo-placeholder" class="logo-placeholder"></div>
+    </a>
+
+    <!-- LOTTIE OVERLAY -->
+    <div id="logo-overlay" class="logo-overlay"></div>
+
+    <!-- MENU -->
+    <nav>
+      <ul class="menu">
+        <li
+          class={pathWithoutLang.startsWith("/works") ||
+          pathWithoutLang === "/motion-design" ||
+          pathWithoutLang.startsWith("/motion-design/")
+            ? "active"
+            : ""}
+        >
+          <a href={`/${currentLang}/motion-design/`}>{t.works}</a>
+        </li>
+
+        <li
+          class={pathWithoutLang.startsWith("/motion-graphics-clients") ||
+          pathWithoutLang.startsWith("/client")
+            ? "active"
+            : ""}
+        >
+          <a href={`/${currentLang}/motion-graphics-clients/`}>{t.clients}</a>
+        </li>
+
+        <li>
+          <a href="https://www.instagram.com/arnemuench/" target="_blank"
+            >{t.insta}
+          </a>
+        </li>
+
+        <li
+          class={pathWithoutLang.startsWith("/motion-design-koeln/")
+            ? "active"
+            : ""}
+        >
+          <a href={`/${currentLang}/motion-design-koeln/`}>{t.about}</a>
+        </li>
+
+        <li class="lang-switch">
+          <a href={enPath} class={currentLang === "en" ? "active" : ""}>en</a><a
+            href={dePath}
+            class={currentLang === "de" ? "active" : ""}>de</a
+          >
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

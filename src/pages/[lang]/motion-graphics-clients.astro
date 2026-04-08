@@ -1,0 +1,13 @@
+---
+import VideoLayout from "../../layouts/VideoLayout.astro";
+import { clients } from "../../data/videos_client.js";
+
+export function getStaticPaths() {
+  return [{ params: { lang: "de" } }, { params: { lang: "en" } }];
+}
+
+const firstVideo = clients[0];
+const { lang } = Astro.params;
+---
+
+<VideoLayout video={firstVideo} type="client" list={clients} lang={lang} />

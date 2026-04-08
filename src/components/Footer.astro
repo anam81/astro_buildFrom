@@ -1,0 +1,15 @@
+---
+const year = new Date().getFullYear();
+const currentPath = Astro.url.pathname;
+const currentLang = currentPath.split("/")[1] === "en" ? "en" : "de";
+---
+
+<footer class="site-footer">
+  <hr />
+  <a href={`/${currentLang}/impressum/`} class="impressum"> Impressum </a>
+  <span style="margin: 0 3px;">|</span>
+  <a href={`/${currentLang}/datenschutz/`} class="impressum">
+    Datenschutzerklärung
+  </a>
+  <p>© {year} Arne Münch</p>
+</footer>

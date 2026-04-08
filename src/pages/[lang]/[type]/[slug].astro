@@ -1,0 +1,48 @@
+---
+import VideoLayout from "../../../layouts/VideoLayout.astro";
+import { videos } from "../../../data/videos.js";
+import { clients } from "../../../data/videos_client.js";
+
+export function getStaticPaths() {
+  const toSlug = (title) =>
+    title
+      .toLowerCase()
+      .replace(/\s+/g, "-")
+      .replace(/[^a-z0-9-]/g, "");
+
+  const worksWithoutFirst = videos.slice(1);
+  const clientsWithoutFirst = clients.slice(1);
+
+  const langs = ["de", "en"];
+
+  return [
+    ...worksWithoutFirst.flatMap((video) =>
+      langs.map((lang) => ({
+        params: {
+          lang,
+          type: "works",
+          slug: toSlug(video.title),
+        },
+        props: { video, type: "works", lang },
+      })),
+    ),
+
+    ...clientsWithoutFirst.flatMap((video) =>
+      langs.map((lang) => ({
+        params: {
+          lang,
+          type: "client",
+          slug: toSlug(video.title),
+        },
+        props: { video, type: "client", lang },
+      })),
+    ),
+  ];
+}
+
+const { video, type, lang } = Astro.props;
+
+const list = type === "client" ? clients : videos;
+---
+
+<VideoLayout video={video} type={type} list={list} lang={lang} />

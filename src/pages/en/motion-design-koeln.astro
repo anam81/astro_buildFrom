@@ -1,0 +1,116 @@
+---
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import "../../style.css";
+const buildVersion = BUILD_TIME; // simpel & effektiv main.js versionieren wegen noCache
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>
+      Motion Designer Köln | Freelancer für Motion Graphics & Animation
+    </title>
+    <meta
+      name="description"
+      content="Freiberuflicher Motion Designer aus Köln – Spezialist für Motion Graphics, After Effects, Animation und Sound Design. Freelancer für professionelles Motion Design."
+    />
+    <meta
+      name="keywords"
+      content="Motiondesign, Motion Graphics, After Effects, Köln, Cologne, AE Scripts, Sound Design, 3D Animation, Erklärfilme, selbständig "
+    />
+    <meta name="author" content="Arne Münch" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  </head>
+
+  <body data-page="about">
+    <div class="container">
+      <Header />
+
+      <main>
+        <div class="portfolio-wrapper">
+          <h1 class="about-content headline">
+            Freelance Motion Design in Cologne
+          </h1>
+
+          <p class="about-content">
+            After graduating from the Academy of Media Arts Cologne in 2010, I
+            have been working as a freelance motion designer, with a focus on
+            motion graphics, character animation, 3D animation, and visual
+            effects. <a href="/en/motion-design/" style="white-space: nowrap;"
+              >Here you can watch my reel.</a
+            >
+          </p>
+
+          <p class="about-content">
+            I specialize in motion design for advertising, TV broadcasts,
+            cinema, exhibitions, stage visuals, explainer videos, and digital
+            media.
+          </p>
+
+          <p class="about-content">
+            As a freelancer in Cologne, I work with clients across Germany and
+            throughout Europe, combining technical precision with creative
+            design.
+          </p>
+          <p class="about-content">
+            I have mastered After Effects and work with other Adobe tools, as
+            well as Cinema 4D.<br />
+            In addition, I develop custom scripts (JavaScript) and create tailored
+            presets and Essential Graphics templates to optimize workflows in After
+            Effects and Premiere Pro. I also work in sound design to bring animations
+            to life.
+          </p>
+
+          <div class="about-wrapper">
+            <img
+              src="/assets/picture.jpg"
+              alt="Arne Münch"
+              class="about-photo"
+            />
+            <div class="about-contact">
+              <p>Just contact me and ask me anything:</p>
+              <p>
+                Arne Münch<br />
+                Heinrich-Bürgers-Str. 2-4<br />
+                50827 Köln<br />
+                Mobile: +49 178 1448296<br />
+                Mail: <span id="emailContact">hier email zusammensetzen</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <Footer />
+    </div>
+    <script>
+      (function () {
+        const emailUser = "a-muench";
+        const emailDomain = "gmx.de";
+
+        const email = emailUser + "@" + emailDomain;
+
+        const emailLink = document.createElement("a");
+        emailLink.href = "mailto:" + email;
+        emailLink.textContent = email;
+
+        const container = document.getElementById("emailContact");
+        container.textContent = ""; // alten Text entfernen
+        container.appendChild(emailLink);
+      })();
+    </script>
+    <script is:inline>
+      document.body.classList.add("is-loaded");
+    </script>
+    <script src="/scripts/lottie.min.js" defer></script>
+    <script src={`/scripts/logo-lottie.js?v=${buildVersion}`} defer></script>
+  </body>
+</html>
