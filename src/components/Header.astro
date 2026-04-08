@@ -37,7 +37,8 @@ const t = labels[currentLang];
     <nav>
       <ul class="menu">
         <li
-          class={pathWithoutLang.startsWith("/works") ||
+          class={pathWithoutLang === "/" ||
+          pathWithoutLang.startsWith("/works") ||
           pathWithoutLang === "/motion-design" ||
           pathWithoutLang.startsWith("/motion-design/")
             ? "active"
