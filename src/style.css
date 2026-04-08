@@ -171,9 +171,6 @@ nav {
         width: 132px;
         height: 110px;
     }
-}
-
-@media (max-width: 700px) {
     .logo-overlay {
         width: 422px;
         height: 238px;
@@ -194,12 +191,12 @@ nav {
 
 @media (max-width: 700px) {
     .menu {
-        margin-bottom: 17px;
+        margin-bottom: 15px;
         /* Abstand nach unten */
     }
 }
 
-@media (max-width: 556px) {
+@media (max-width: 625px) {
     .site-header {
         padding-top: 1px;
     }
@@ -212,7 +209,7 @@ nav {
     }
 
     .menu li a {
-        font-size: 0.9rem;
+        font-size: 0.95rem;
         /* kleiner, wenn Menü untereinander steht */
     }
 
@@ -221,7 +218,7 @@ nav {
     }
 
     .menu li.lang-switch a {
-        font-size: 0.725em;
+        font-size: 0.9remm;
     }
 }
 
