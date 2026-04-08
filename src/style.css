@@ -217,9 +217,9 @@ nav {
         order: -1;
     }
 
-    .menu li.lang-switch a {
+    /* .menu li.lang-switch a {
         font-size: 0.77em;
-    }
+    } */
 }
 
 .menu li a {
