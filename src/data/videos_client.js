@@ -119,7 +119,7 @@ export const clients = [
         description: {
             en: "For a WDR Cosmo podcast trailer (Iran im Herzen), I animated these graphics as an intro.<br>"+ 
                 "Agency: <a href='https://www.studio-paeper.tv/' target='_blank'>Studio Paeper</a><br>",
-            de: "Das Intro für den WDR Cosmo Iran im Herzen Podcast Trailer.<br>"+ 
+            de: "Das Intro für den WDR Cosmo – Iran im Herzen – Podcast Trailer.<br>"+ 
                 "Agentur: <a href='https://www.studio-paeper.tv/' target='_blank'>Studio Paeper</a><br>"
         },
         textOnThumb: "WDR Cosmo"
