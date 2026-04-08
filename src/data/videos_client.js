@@ -12,9 +12,9 @@ export const clients = [
         id: "1175130607",
         title: "Atmen: Breathe Your Life",
         description: {
-            en: "I made the graphics for the ARD documentation 'Atmen: Breathe Your Life.' "+ 
+            en: 'I made the graphics for the ARD documentation "Atmen: Breathe Your Life." '+ 
                 "Among others I composed and animated this energetic intro/opener.",
-            de: "Grafiken für die ARD-Dokumentation „Atmen: Breathe Your Life.“ "+ 
+            de: 'Grafiken für die ARD-Dokumentation "Atmen: Breathe Your Life." '+ 
                 "Unter anderem habe ich diesen energiegeladenen Intro-Opener gestaltet und animiert."
         },
         ratio: "235/100",
@@ -119,7 +119,7 @@ export const clients = [
         description: {
             en: "For a WDR Cosmo podcast trailer (Iran im Herzen), I animated these graphics as an intro.<br>"+ 
                 "Agency: <a href='https://www.studio-paeper.tv/' target='_blank'>Studio Paeper</a><br>",
-            de: "Das Intro für den WDR Cosmo Podcast-Trailer (Iran im Herzen).<br>"+ 
+            de: "Das Intro für den WDR Cosmo Iran im Herzen Podcast Trailer.<br>"+ 
                 "Agentur: <a href='https://www.studio-paeper.tv/' target='_blank'>Studio Paeper</a><br>"
         },
         textOnThumb: "WDR Cosmo"
@@ -173,8 +173,8 @@ export const clients = [
         id: "90454734", 
         title: "ARD Radio Feature", 
         description: {
-            en: 'I animated this TV trailer for „Das ARD Radio Feature“',
-            de: 'TV-Trailer für „Das ARD Radio Feature“'
+            en: 'I animated this TV trailer for "Das ARD Radio Feature"',
+            de: 'TV-Trailer für "Das ARD Radio Feature"'
         },
         textOnThumb: "ARD Radio Feature"
     },

@@ -31,7 +31,7 @@ export const videos = [
     description: {
       en: "I had the honor of animating a music video for the cologne band Luciel: From Outside – " +
           "<a href='https://www.lucielband.com' target='_blank'>www.lucielband.com</a>",
-      de: "Ich hatte das Vergnügen, ein Musikvideo für die Kölner Band Luciel zu animieren: „From Outside“ – " +
+      de: 'Ich hatte das Vergnügen, ein Musikvideo für die Kölner Band Luciel zu animieren: "From Outside" – ' +
           "<a href='https://www.lucielband.com' target='_blank'>www.lucielband.com</a>"
     }
   },
