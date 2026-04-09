@@ -22,7 +22,7 @@ export const videos = [
     title: "walk sessions",
     description: {
       en: "It was a lot of fun making these funky little characters walk and generate the beats—sound on!",
-      de: "Es hat richtig Spaß gemacht, diese kleinen funkigen Figuren laufen zu lassen und die Beats zu produzieren — unbedingt Ton an!"
+      de: "Es hat Spaß gemacht, diese kleinen funkigen Figuren laufen zu lassen und die Beats zu produzieren — unbedingt Ton an!"
     }
   },
   {
