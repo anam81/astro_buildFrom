@@ -11,7 +11,7 @@ export const videos = [
         '<a href="/en/motion-design-koeln/" style="white-space: nowrap;">motion designer in Cologne</a>.',
       de:
         'Mein Demoreel.<br>' +
-        'Schaue unten meine persönlichen Arbeiten an, besuche meine ' +
+        'Entdecke unten meine persönlichen Arbeiten, besuche meine ' +
         '<a href="/de/motion-graphics-clients/" style="white-space: nowrap;">Seite mit Kundenprojekten</a> ' +
         'oder erfahre mehr über meine Arbeit als ' +
         '<a href="/de/motion-design-koeln/" style="white-space: nowrap;">Motion Designer in Köln</a>.'
