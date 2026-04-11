@@ -256,7 +256,7 @@ nav {
 .lang-switch a + a::before {
     content: "/";
     margin: 0 0.2em;
-    color: var(--link-color);
+    color: var(--greylink-color);
 }
 
 /* Hauptcontainer: max 900px, 95% Breite, zentriert */
