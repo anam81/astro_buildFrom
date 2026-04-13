@@ -83,7 +83,7 @@ export const videos = [
     description: {
       en: "I animated this opener for the PhotoBookMuseum Let’s Talk Sessions. Original graphics designed by " +
           "<a href='https://jorgealderete.com/' target='_blank'>Dr. Alderete</a>",
-      de: "Ich habe diesen Opener für die PhotoBookMuseum Let’s Talk Sessions animiert. Die originalen Grafiken wurden von " +
+      de: "Opener für die PhotoBookMuseum Let’s Talk Sessions. Die originalen Grafiken sind von " +
           "<a href='https://jorgealderete.com/' target='_blank'>Dr. Alderete</a> entworfen"
     }
   },
