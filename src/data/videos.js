@@ -110,7 +110,7 @@ export const videos = [
     title: "algorhythmus",
     description: {
       en: "algorhythmus – I experimented with code-driven layer duplication to form a logo.",
-      de: "algorhythmus – durch Code gesteuerte Vervielfältigungen, die sich zu einem Logo formen."
+      de: "algorhythmus – ein Code gesteuertes Experiment, aus vielen Ebenenkopien formt sich ein Logo."
     }
   },
   { 
