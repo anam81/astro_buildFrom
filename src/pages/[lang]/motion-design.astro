@@ -3,11 +3,24 @@ import VideoLayout from "../../layouts/VideoLayout.astro";
 import { videos } from "../../data/videos.js";
 
 export function getStaticPaths() {
-  return [{ params: { lang: "de" } }, { params: { lang: "en" } }];
+    return [{ params: { lang: "de" } }, { params: { lang: "en" } }];
 }
 
 const firstVideo = videos[0];
 const { lang } = Astro.params;
+
+const base = "https://arnemuench.de";
+const canonical = `${base}/${lang}/works/`;
+const en = `${base}/en/works/`;
+const de = `${base}/de/works/`;
 ---
 
-<VideoLayout video={firstVideo} type="works" list={videos} lang={lang} />
+<VideoLayout
+    video={firstVideo}
+    type="works"
+    list={videos}
+    lang={lang}
+    canonical={canonical}
+    enUrl={en}
+    deUrl={de}
+/>

@@ -7,45 +7,65 @@ const buildVersion = BUILD_TIME; // simpel & effektiv main.js versionieren wegen
 
 <!doctype html>
 <html lang="de">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Impressum – Arne Münch</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Impressum – Arne Münch</title>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  </head>
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/favicon-16x16.png"
+        />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
-  <body>
-    <div class="container">
-      <Header />
+        <link rel="canonical" href="https://arnemuench.de/de/impressum/" />
+        <meta name="robots" content="noindex,follow" />
+    </head>
 
-      <main>
-        <div class="portfolio-wrapper">
-          <div class="impressum-content">
-            <h1 class="headline">Impressum</h1>
-            <p>
-              Verantwortlich für den Inhalt:<br />
-              Arne Münch<br />
-              Heinrich-Bürgers-Str. 2-4<br />
-              50827 Köln<br />
-              Mobile: +49 178 1448296<br />
-              USt-IdNr.: DE297699560<br />
-              E-Mail:
-              <a href="mailto:mail@arnemuench.de">mail@arnemuench.de</a>
-            </p>
-          </div>
+    <body>
+        <div class="container">
+            <Header />
+
+            <main>
+                <div class="portfolio-wrapper">
+                    <div class="impressum-content">
+                        <h1 class="headline">Impressum</h1>
+                        <p>
+                            Verantwortlich für den Inhalt:<br />
+                            Arne Münch<br />
+                            Heinrich-Bürgers-Str. 2-4<br />
+                            50827 Köln<br />
+                            Mobile: +49 178 1448296<br />
+                            USt-IdNr.: DE297699560<br />
+                            E-Mail:
+                            <a href="mailto:mail@arnemuench.de"
+                                >mail@arnemuench.de</a
+                            >
+                        </p>
+                    </div>
+                </div>
+
+                <Footer />
+            </main>
+            <script is:inline>
+                document.body.classList.add("is-loaded");
+            </script>
+            <script src="/scripts/lottie.min.js" defer></script>
+            <script src={`/scripts/logo-lottie.js?v=${buildVersion}`} defer
+            ></script>
         </div>
-
-        <Footer />
-      </main>
-      <script is:inline>
-        document.body.classList.add("is-loaded");
-      </script>
-      <script src="/scripts/lottie.min.js" defer></script>
-      <script src={`/scripts/logo-lottie.js?v=${buildVersion}`} defer></script>
-    </div>
-  </body>
+    </body>
 </html>

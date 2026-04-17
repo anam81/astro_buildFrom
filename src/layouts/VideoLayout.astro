@@ -5,158 +5,181 @@ import "../style.css";
 
 const buildVersion = BUILD_TIME; // simpel & effektiv main.js versionieren wegen noCache
 
-const { video, type, list, lang } = Astro.props;
+const { video, type, list, lang, canonical, enUrl, deUrl } = Astro.props;
 const firstVideo = list[0];
 
 const description =
-  type === "client"
-    ? "Motion Graphics, Animation und After Effects in Köln: Portfolio mit Motion Design Arbeiten, Character Animation und kreativen Kundenprojekten."
-    : type === "works"
-      ? "Motion Graphics, Character Animation und After Effects in Köln: Portfolio mit Motion Design und Animationsprojekten sowie visuellen Experimenten."
-      : "";
+    type === "client"
+        ? "Motion Graphics, Animation und After Effects in Köln: Portfolio mit Motion Design Arbeiten, Character Animation und kreativen Kundenprojekten."
+        : type === "works"
+          ? "Motion Graphics, Character Animation und After Effects in Köln: Portfolio mit Motion Design und Animationsprojekten sowie visuellen Experimenten."
+          : "";
 
 // 👉 HIER: listThumbUrls bauen + Thumbnails holen
 const listThumbUrls = await Promise.all(
-  list.map(async (v: any) => {
-    try {
-      const res = await fetch(
-        `https://vimeo.com/api/oembed.json?url=https://vimeo.com/${v.id}`,
-      );
-      const data = await res.json();
+    list.map(async (v: any) => {
+        try {
+            const res = await fetch(
+                `https://vimeo.com/api/oembed.json?url=https://vimeo.com/${v.id}`,
+            );
+            const data = await res.json();
 
-      const upgradedThumb = upscaleVimeoThumb(data.thumbnail_url, 400);
-      return {
-        ...v,
-        thumbnail: upgradedThumb,
-      };
-    } catch (err) {
-      return {
-        ...v,
-        thumbnail: "",
-      };
-    }
-  }),
+            const upgradedThumb = upscaleVimeoThumb(data.thumbnail_url, 400);
+            return {
+                ...v,
+                thumbnail: upgradedThumb,
+            };
+        } catch (err) {
+            return {
+                ...v,
+                thumbnail: "",
+            };
+        }
+    }),
 );
 function upscaleVimeoThumb(url: string, targetWidth: number) {
-  if (!url) return url;
+    if (!url) return url;
 
-  // Fall 1: _640x360
-  const matchWxH = url.match(/_(\d+)x(\d+)/);
+    // Fall 1: _640x360
+    const matchWxH = url.match(/_(\d+)x(\d+)/);
 
-  if (matchWxH) {
-    const originalWidth = parseInt(matchWxH[1], 10);
-    const originalHeight = parseInt(matchWxH[2], 10);
+    if (matchWxH) {
+        const originalWidth = parseInt(matchWxH[1], 10);
+        const originalHeight = parseInt(matchWxH[2], 10);
 
-    if (!originalWidth || !originalHeight) return url;
+        if (!originalWidth || !originalHeight) return url;
 
-    const aspectRatio = originalHeight / originalWidth;
-    const newHeight = Math.round(targetWidth * aspectRatio);
+        const aspectRatio = originalHeight / originalWidth;
+        const newHeight = Math.round(targetWidth * aspectRatio);
 
-    return url.replace(/_\d+x\d+/, `_${targetWidth}x${newHeight}`);
-  }
+        return url.replace(/_\d+x\d+/, `_${targetWidth}x${newHeight}`);
+    }
 
-  // Fall 2: nur _640 (→ 16:9 annehmen)
-  const matchWidthOnly = url.match(/_(\d+)(?!x)/);
+    // Fall 2: nur _640 (→ 16:9 annehmen)
+    const matchWidthOnly = url.match(/_(\d+)(?!x)/);
 
-  if (matchWidthOnly) {
-    const aspectRatio = 9 / 16; // 16:9
-    const newHeight = Math.round(targetWidth * aspectRatio);
+    if (matchWidthOnly) {
+        const aspectRatio = 9 / 16; // 16:9
+        const newHeight = Math.round(targetWidth * aspectRatio);
 
-    return url.replace(/_(\d+)/, `_${targetWidth}x${newHeight}`);
-  }
+        return url.replace(/_(\d+)/, `_${targetWidth}x${newHeight}`);
+    }
 
-  return url;
+    return url;
 }
 ---
 
 <!doctype html>
 <html lang="de">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      {video.title} - arnemuench.de - Motion Designer aus Köln - After Effects, Motion
-      Graphics, Sound & Scripting
-    </title>
-    <meta name="description" content={description} />
-    <meta
-      name="keywords"
-      content="motion design, motion graphics, after effects, köln, cologne, scripts, sound design, selbständig"
-    />
-    <meta name="author" content="Arne Münch" />
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>
+            {video.title} - arnemuench.de - Motion Designer aus Köln - After Effects,
+            Motion Graphics, Sound & Scripting
+        </title>
+        <meta name="description" content={description} />
+        <meta
+            name="keywords"
+            content="motion design, motion graphics, after effects, köln, cologne, scripts, sound design, selbständig"
+        />
+        <meta name="author" content="Arne Münch" />
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  </head>
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/favicon-16x16.png"
+        />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
-  <body>
-    <div class="container">
-      <Header />
+        <!-- canonical -->
+        <link rel="canonical" href={canonical} />
+        <link rel="alternate" hreflang="en" href={enUrl} />
+        <link rel="alternate" hreflang="de" href={deUrl} />
+        <link rel="alternate" hreflang="x-default" href={enUrl} />
+    </head>
 
-      <main>
-        <div class="portfolio-wrapper">
-          <!-- 🎬 Video -->
-          <div class="video-wrapper" data-ratio={video.ratio}>
-            <iframe
-              src={`https://player.vimeo.com/video/${video.id}?dnt=1&title=0&byline=0&portrait=0&color=dd5424`}
-              allow="autoplay; fullscreen; picture-in-picture"
-              allowfullscreen></iframe>
-          </div>
+    <body>
+        <div class="container">
+            <Header />
 
-          <!-- 📝 Beschreibung -->
-          <div class="video-description">
-            <p set:html={video.description[lang]} />
-          </div>
+            <main>
+                <div class="portfolio-wrapper">
+                    <!-- 🎬 Video -->
+                    <div class="video-wrapper" data-ratio={video.ratio}>
+                        <iframe
+                            src={`https://player.vimeo.com/video/${video.id}?dnt=1&title=0&byline=0&portrait=0&color=dd5424`}
+                            allow="autoplay; fullscreen; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
 
-          <!-- 🧱 Grid -->
-          <div class="video-grid">
-            {
-              listThumbUrls
-                .filter((v) => v.id !== video.id)
-                .map((v) => {
-                  const slug = v.title
-                    .toLowerCase()
-                    .replace(/\s+/g, "-")
-                    .replace(/[^a-z0-9-]/g, "");
+                    <!-- 📝 Beschreibung -->
+                    <div class="video-description">
+                        <p set:html={video.description[lang]} />
+                    </div>
 
-                  return (
-                    <a
-                      href={
-                        v.id === firstVideo.id
-                          ? type === "works"
-                            ? `/${lang}/motion-design/`
-                            : type === "client"
-                              ? `/${lang}/motion-graphics-clients/`
-                              : `/${lang}/`
-                          : `/${lang}/${type}/${slug}/`
-                      }
-                      class="thumb"
-                    >
-                      <img
-                        src={v.thumbnail}
-                        data-ratio={v.ratio}
-                        alt={v.title}
-                        loading="lazy"
-                        decoding="async"
-                      />
+                    <!-- 🧱 Grid -->
+                    <div class="video-grid">
+                        {
+                            listThumbUrls
+                                .filter((v) => v.id !== video.id)
+                                .map((v) => {
+                                    const slug = v.title
+                                        .toLowerCase()
+                                        .replace(/\s+/g, "-")
+                                        .replace(/[^a-z0-9-]/g, "");
 
-                      {v.textOnThumb && (
-                        <span class="thumb-text">{v.textOnThumb}</span>
-                      )}
-                    </a>
-                  );
-                })
-            }
-          </div>
+                                    return (
+                                        <a
+                                            href={
+                                                v.id === firstVideo.id
+                                                    ? type === "works"
+                                                        ? `/${lang}/motion-design/`
+                                                        : type === "client"
+                                                          ? `/${lang}/motion-graphics-clients/`
+                                                          : `/${lang}/`
+                                                    : `/${lang}/${type}/${slug}/`
+                                            }
+                                            class="thumb"
+                                        >
+                                            <img
+                                                src={v.thumbnail}
+                                                data-ratio={v.ratio}
+                                                alt={v.title}
+                                                loading="lazy"
+                                                decoding="async"
+                                            />
+
+                                            {v.textOnThumb && (
+                                                <span class="thumb-text">
+                                                    {v.textOnThumb}
+                                                </span>
+                                            )}
+                                        </a>
+                                    );
+                                })
+                        }
+                    </div>
+                </div>
+            </main>
+
+            <Footer />
         </div>
-      </main>
-
-      <Footer />
-    </div>
-    <script src={`/scripts/main.js?v=${buildVersion}`} defer></script>
-    <script src="/scripts/lottie.min.js" defer></script>
-    <script src={`/scripts/logo-lottie.js?v=${buildVersion}`} defer></script>
-  </body>
+        <script src={`/scripts/main.js?v=${buildVersion}`} defer></script>
+        <script src="/scripts/lottie.min.js" defer></script>
+        <script src={`/scripts/logo-lottie.js?v=${buildVersion}`} defer
+        ></script>
+    </body>
 </html>
