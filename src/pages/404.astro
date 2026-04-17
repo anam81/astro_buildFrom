@@ -1,5 +1,5 @@
 ---
-
+import "../style.css";
 ---
 
 <!doctype html>
@@ -7,10 +7,44 @@
     <head>
         <meta charset="utf-8" />
         <title>Seite nicht gefunden</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta
+            name="description"
+            content="Freiberuflicher Motion Designer aus Köln – Spezialist für Motion Graphics, After Effects, Animation und Sound Design. Freelancer für hochwertiges Motiondesign."
+        />
+        <meta
+            name="keywords"
+            content="Motiondesign, Motion Graphics, After Effects, Köln, Cologne, AE Scripts, Sounddesign, 3D-Animation, Erklärfilme, selbständig, On-Air-Design, Visual Effects, VFX, Erklärgrafik, Erklärfilme"
+        />
+        <meta name="author" content="Arne Münch" />
+
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/favicon-16x16.png"
+        />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     </head>
+
     <body>
-        <h1>404 – Seite nicht gefunden</h1>
-        <p>Die angeforderte Seite existiert nicht.</p>
+        <p>404 – Seite nicht gefunden<br>Die angeforderte Seite existiert nicht.</p>
         <a href="/">Zur Startseite</a>
+        <script is:inline>
+            document.body.classList.add("is-loaded");
+        </script>
     </body>
 </html>
