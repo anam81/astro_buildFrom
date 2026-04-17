@@ -1,5 +1,8 @@
 ---
 import "../style.css";
+const path = Astro.url.pathname;
+const isDe = path.startsWith("/de");
+const home = isDe ? "/de/motion-design/" : "/en/motion-design/";
 ---
 
 <!doctype html>
@@ -41,8 +44,11 @@ import "../style.css";
     </head>
 
     <body>
-        <p>404 – Seite nicht gefunden<br>Die angeforderte Seite existiert nicht.</p>
-        <a href="/">Zur Startseite</a>
+        <div class="impressum-content">
+            <h1 class="headline">404 – Seite nicht gefunden</h1>
+            <p>Die angeforderte Seite existiert nicht.</p>
+            <a href={home}>Zur Startseite</a>
+        </div>
         <script is:inline>
             document.body.classList.add("is-loaded");
         </script>
