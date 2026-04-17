@@ -45,10 +45,13 @@ if (Astro.request?.headers?.get("referer")?.includes("/de/")) {
     </head>
 
     <body>
-        <div class="impressum-content">
+        <div class="impressum-content notfound">
             <h1 class="headline">404 – Seite nicht gefunden</h1>
             <p>Die angeforderte Seite existiert nicht.</p>
-            <a href={home}>Zur Startseite</a>
+            <p>
+                <a href="/de/motion-design/">Deutsch</a> /
+                <a href="/en/motion-design/">English</a>
+            </p>
         </div>
         <script is:inline>
             document.body.classList.add("is-loaded");
