@@ -1,6 +1,23 @@
 ---
-import MotionDesign from "../en/motion-design.astro";
-import "../style.css";
+import VideoLayout from "../layouts/VideoLayout.astro";
+import { videos } from "../data/videos.js";
+
+
+const firstVideo = videos[0];
+const lang  = "en";
+
+const base = "https://arnemuench.de";
+const canonical = `${base}/${lang}/motion-design/`;
+const en = `${base}/en/motion-design/`;
+const de = `${base}/de/motion-design/`;
 ---
 
-<MotionDesign />
+<VideoLayout
+    video={firstVideo}
+    type="works"
+    list={videos}
+    lang={lang}
+    canonical={canonical}
+    enUrl={en}
+    deUrl={de}
+/>

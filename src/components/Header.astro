@@ -1,10 +1,16 @@
 ---
 const currentPath = Astro.url.pathname;
-const currentLang = currentPath.startsWith("/en") ? "en" : "de";
+const currentLang = currentPath.startsWith("/de") ? "de" : "en";
 const pathWithoutLang = currentPath.replace(/^\/(en|de)/, "");
+let langPath;
+if (pathWithoutLang === "/" || pathWithoutLang === "") {
+    langPath = "/motion-design/";
+} else {
+    langPath = pathWithoutLang;
+}
 // Ziel-Links
-const enPath = `/en${pathWithoutLang}`;
-const dePath = `/de${pathWithoutLang}`;
+const enPath = `/en${langPath}`;
+const dePath = `/de${langPath}`;
 
 const labels = {
     en: {
