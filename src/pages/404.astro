@@ -1,9 +1,5 @@
 ---
 import "../style.css";
-let home = "/en/motion-design/";
-if (Astro.request?.headers?.get("referer")?.includes("/de/")) {
-    home = "/de/motion-design/";
-}
 ---
 
 <!doctype html>
