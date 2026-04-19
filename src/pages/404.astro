@@ -42,6 +42,21 @@ import "../style.css";
 
     <body>
         <div class="impressum-content notfound">
+            <!-- LOTTIE ANIMATION -->
+            <div class="notfound-lottie">
+                <div id="anim"></div>
+            </div>
+            <script>
+                window.addEventListener("DOMContentLoaded", () => {
+                    lottie.loadAnimation({
+                        container: document.getElementById("anim"),
+                        renderer: "svg",
+                        loop: true,
+                        autoplay: true,
+                        path: "/assets/404.json",
+                    });
+                });
+            </script>
             <h1 class="headline">404 – Seite nicht gefunden</h1>
             <p>Die angeforderte Seite existiert nicht.</p>
             <p>
@@ -52,5 +67,6 @@ import "../style.css";
         <script is:inline>
             document.body.classList.add("is-loaded");
         </script>
+        <script src="/scripts/lottie.min.js" defer></script>
     </body>
 </html>

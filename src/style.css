@@ -1,5 +1,5 @@
 :root {
-    --link-color: hsl(15, 97%, 46%);
+    --link-color: #e73c04;
     --hover-color: hsl(12, 100%, 65%);
     --text-color: #555555;
     --greylink-color: #888888;
@@ -11,33 +11,33 @@ da runterladen und css kopieren */
 /* roboto-regular */
 @font-face {
     font-display: swap;
-    font-family: 'Roboto';
+    font-family: "Roboto";
     font-style: normal;
     font-weight: 400;
-    src: url('/fonts/roboto-v51-latin-regular.woff2') format('woff2');
+    src: url("/fonts/roboto-v51-latin-regular.woff2") format("woff2");
 }
 
 /* roboto-italic */
 @font-face {
     font-display: swap;
-    font-family: 'Roboto';
+    font-family: "Roboto";
     font-style: italic;
     font-weight: 400;
-    src: url('/fonts/roboto-v51-latin-italic.woff2') format('woff2');
+    src: url("/fonts/roboto-v51-latin-italic.woff2") format("woff2");
 }
 
 /* roboto-700 - latin */
 @font-face {
     font-display: swap;
-    font-family: 'Roboto';
+    font-family: "Roboto";
     font-style: normal;
     font-weight: 700;
-    src: url('/fonts/roboto-v51-latin-700.woff2') format('woff2');
+    src: url("/fonts/roboto-v51-latin-700.woff2") format("woff2");
 }
 
 body,
 html {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
 }
 
 p {
@@ -130,13 +130,13 @@ body.is-loaded {
 }
 
 /* Hover auf den Link, das Overlay wird heller */
-.header-inner a~.logo-overlay {
+.header-inner a ~ .logo-overlay {
     filter: brightness(1);
     transition: filter 0.4s ease;
     /* Transition auf dem Grundzustand */
 }
 
-.header-inner a:hover~.logo-overlay {
+.header-inner a:hover ~ .logo-overlay {
     filter: brightness(1.09);
     transition: filter 0.5s ease;
 }
@@ -260,7 +260,7 @@ nav {
 }
 
 /* Hauptcontainer: max 900px, 95% Breite, zentriert */
-.container { 
+.container {
     width: 95%;
     max-width: 900px;
     margin: auto auto 50px auto;
@@ -331,7 +331,6 @@ nav {
         color: var(--hover-color);
     }
 }
-
 
 /* Thumbnail Grid */
 
@@ -406,8 +405,7 @@ nav {
 
 /* maximal 4 Spalten */
 
-@media (min-width:800px) {
-
+@media (min-width: 800px) {
     .video-grid {
         grid-template-columns: repeat(4, 1fr);
     }
@@ -416,13 +414,11 @@ nav {
         font-size: clamp(0px, 1.242vw, 11.8px);
         /* 950 * font-size in vw /100 */
     }
-
 }
 
 /* 3 Spalten */
 
-@media (max-width:800px) {
-
+@media (max-width: 800px) {
     .video-grid {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -430,13 +426,11 @@ nav {
     .thumb-text {
         font-size: 1.6vw;
     }
-
 }
 
 /* 2 Spalten */
 
-@media (max-width:500px) {
-
+@media (max-width: 500px) {
     .video-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -444,7 +438,6 @@ nav {
     .thumb-text {
         font-size: 2.4vw;
     }
-
 }
 
 /* Footer */
@@ -613,4 +606,8 @@ nav {
 
 .notfound {
     margin: 10px 40px;
+}
+.notfound-lottie {
+    width: 100%;
+    max-width: 900px;
 }
