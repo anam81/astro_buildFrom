@@ -8,11 +8,24 @@ const buildVersion = BUILD_TIME; // simpel & effektiv main.js versionieren wegen
 const { video, type, list, lang, canonical, enUrl, deUrl } = Astro.props;
 const firstVideo = list[0];
 
+const title =
+    lang === "de"
+        ? `${video.title} - arnemuench.de - Motion Designer aus Köln - After Effects, Motion Graphics, Sound & Scripting`
+        : `${video.title} - arnemuench.de - Motion Designer based in Cologne - After Effects, motion graphics, sound & scripting`;
+
 const description =
-    type === "client"
-        ? "Motion Graphics, Animation und After Effects in Köln: Portfolio mit Motion Design Arbeiten, Character Animation und kreativen Kundenprojekten."
-        : type === "works"
-          ? "Motion Graphics, Character Animation und After Effects in Köln: Portfolio mit Motion Design und Animationsprojekten sowie visuellen Experimenten."
+    lang === "de"
+        ? type === "client"
+            ? "Motion Graphics, Animation und After Effects in Köln: Portfolio mit Motion Design Arbeiten, Character Animation und kreativen Kundenprojekten."
+            : type === "works"
+              ? "Motion Graphics, Character Animation und After Effects in Köln: Portfolio mit Motion Design und Animationsprojekten sowie visuellen Experimenten."
+              : ""
+        : lang === "en"
+          ? type === "client"
+              ? "Motion graphics, animation, and After Effects in Cologne: portfolio featuring motion design work, character animation, and creative client projects."
+              : type === "works"
+                ? "Motion graphics, character animation, and After Effects in Cologne: portfolio with motion design and animation projects as well as visual experiments."
+                : ""
           : "";
 
 // 👉 HIER: listThumbUrls bauen + Thumbnails holen
@@ -74,10 +87,7 @@ function upscaleVimeoThumb(url: string, targetWidth: number) {
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>
-            {video.title} - arnemuench.de - Motion Designer aus Köln - After Effects,
-            Motion Graphics, Sound & Scripting
-        </title>
+        <title>{title}</title>
         <meta name="description" content={description} />
         <meta
             name="keywords"
