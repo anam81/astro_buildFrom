@@ -21,8 +21,8 @@ export const videos = [
     id: "1174569556",
     title: "walk sessions",
     description: {
-      en: "It was a lot of fun making these funky little characters walk and generate the beats—sound on!",
-      de: "Es hat Spaß gemacht, diese kleinen funkigen Figuren laufen zu lassen und die Beats zu produzieren — unbedingt Ton an!"
+      en: "Character animation loop. It was fun making these funky little characters walk and generate the beats—sound on!",
+      de: "Character Animation Loop. Das war Spaß, diese kleinen funkigen Figuren laufen zu lassen und die Beats zu produzieren — unbedingt Ton an!"
     }
   },
   {
@@ -56,7 +56,7 @@ export const videos = [
     title: "amazing sight",
     description: {
       en: "Another character animation loop I created — really happy with how it turned out.",
-      de: "Noch eine nette Character-Loop-Animation."
+      de: "Ein weiterer netter Character Animation Loop."
     }
   },
   { 
@@ -71,9 +71,9 @@ export const videos = [
     id: "141259204", 
     title: "der weg ist das ziel", 
     description: {
-      en: 'A short animation I made that circles around the old saying "The journey is the destination". Sound by ' + 
+      en: 'A short character animation that circles around the old saying "The journey is the destination". Sound by ' + 
           "<a href='https://www.instagram.com/m.zilz/?hl=de' target='_blank'>Marcus Zilz</a>",
-      de: 'Eine kleine Animation, die sich um das alte Sprichwort "Der Weg ist das Ziel" dreht. Sound von ' + 
+      de: 'Eine kleine Character Animation, die sich um das alte Sprichwort "Der Weg ist das Ziel" dreht. Sound von ' + 
           "<a href='https://www.instagram.com/m.zilz/?hl=de' target='_blank'>Marcus Zilz</a>"
     }
   },
