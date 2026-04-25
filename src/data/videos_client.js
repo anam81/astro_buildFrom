@@ -33,7 +33,7 @@ export const clients = [
                 "Die Initiative erforscht dezentrale Systeme, die einen zuverlässigen Zugang zu sauberem Trinkwasser " +
                 "für Gemeinden in der Region ermöglichen könnten.<br>"+ 
                 "Regie: <a href='https://www.heinzenziob.de' target='_blank'>Florian Heinzen-Ziob</a><br>"+ 
-                "<a href='https://www.youtube.com/watch?v=d9KdfnNRlV4' target='_blank'>das ganze Video ansehen</a>"
+                "<a href='https://www.youtube.com/watch?v=d9KdfnNRlV4' target='_blank'>Das ganze Video ansehen</a>"
         },
         textOnThumb: "HydroDeSal"
     },
