@@ -24,12 +24,12 @@ export const clients = [
         id: "1175321911",
         title: "HydroDeSal",
         description: {
-            en: "I created this animation for HydroDeSal, a research project focused on seawater desalination in the Persian Gulf. "+ 
+            en: "I created this character animation for HydroDeSal, a research project focused on seawater desalination in the Persian Gulf. "+ 
                 "The initiative explores decentralized systems that could provide reliable access to clean drinking water " +
                 "for communities in the region.<br>"+ 
                 "Directed by <a href='https://www.heinzenziob.de' target='_blank'>Florian Heinzen-Ziob</a><br>"+ 
                 "<a href='https://www.youtube.com/watch?v=d9KdfnNRlV4' target='_blank'>Watch the full video</a>",
-            de: "Eine Animation für HydroDeSal, ein Forschungsprojekt zur Meerwasserentsalzung im Persischen Golf. "+ 
+            de: "Eine Character Animation für HydroDeSal, ein Forschungsprojekt zur Meerwasserentsalzung im Persischen Golf. "+ 
                 "Die Initiative erforscht dezentrale Systeme, die einen zuverlässigen Zugang zu sauberem Trinkwasser " +
                 "für Gemeinden in der Region ermöglichen könnten.<br>"+ 
                 "Regie: <a href='https://www.heinzenziob.de' target='_blank'>Florian Heinzen-Ziob</a><br>"+ 
