@@ -55,8 +55,8 @@ export const videos = [
     id: "1174586225",
     title: "amazing sight",
     description: {
-      en: "Another character animation loop I created — really happy with how it turned out.",
-      de: "Ein weiterer netter Character Animation Loop."
+      en: "Amazing Sight - Another character animation loop I created.",
+      de: "Amazing Sight - Ein weiterer Character Animation Loop."
     }
   },
   { 
