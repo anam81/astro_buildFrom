@@ -56,7 +56,7 @@ export const videos = [
     title: "amazing sight",
     description: {
       en: "Amazing Sight - Another character animation loop I created.",
-      de: "Amazing Sight - Character Animation Loop."
+      de: "Amazing Sight - Character Animation Loop"
     }
   },
   { 
