@@ -1,7 +1,7 @@
 export const videos = [
   { 
     id: "43720180", 
-    title: "demoreel", 
+    title: "motion reel", 
     description: {
       en:
         'A showcase of my work.<br>' +
